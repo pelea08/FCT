@@ -1,7 +1,7 @@
 # FCT
 15/05/2020- Descripción de la aplicación, diseño de pantallas para el móvil, versión mínima, entornos desarrollo y algunos apartados más.
 Diseño logotipo y hacer fondo transparente y elección de colores de la app para que combine.
-Repaso modelo Entidad-relación.
+Repaso modelo Entidad-Relación.
 
 16/05/2020- Diseñando formulario registrarse para app web e inserción datos base de datos, alinearlo, darle estilos...
 Introducción segundo idioma en la app móvil.
@@ -13,4 +13,11 @@ Implementar la inserción de datos en la base de datos en la app móvil, pero me
 Registro dominio gratuito ftp para la subida del código php para implementar en Android me está dando muchos problemas porque estoy intentando conseguir una url publica para implementarlo.
 Hasta dentro de 48 horas no puedo hacer pruebas debido a que mi dominio se tiene que registrar en los dns para ser accesibles.
 Añadir genero app móvil y web e implementarlo en la base de datos online. App móvil sigue dando problemas para insertar.
+
+18/05/2020- Nuevo errores a la hora de insertar informacion en la base de datos desde el movil,
+posibles solucion estoy intentnado conseguir un certificado gratuito ssl pero me esta dando muchos problemas estoy a la espera de que me lo aprueben.
+Realización modelo Entidad-relación y del modelo Entidad-Relación
+Diseñara pantalla de inicio para escoger si iniciar sesion o registrar en app web todo esto subido al hosting y que sea accesible desde internet.
+
+
 
