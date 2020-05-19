@@ -14,10 +14,17 @@ Registro dominio gratuito ftp para la subida del código php para implementar en
 Hasta dentro de 48 horas no puedo hacer pruebas debido a que mi dominio se tiene que registrar en los dns para ser accesibles.
 Añadir genero app móvil y web e implementarlo en la base de datos online. App móvil sigue dando problemas para insertar.
 
-18/05/2020- Nuevo errores a la hora de insertar informacion en la base de datos desde el movil,
-posibles solucion estoy intentnado conseguir un certificado gratuito ssl pero me esta dando muchos problemas estoy a la espera de que me lo aprueben.
+18/05/2020- Nuevo errores a la hora de insertar información en la base de datos desde el móvil,
+posibles solución estoy intentando conseguir un certificado gratuito SSL pero me está dando muchos problemas estoy a la espera de que me lo aprueben.
 Realización modelo Entidad-relación y del modelo Entidad-Relación
-Diseñara pantalla de inicio para escoger si iniciar sesion o registrar en app web todo esto subido al hosting y que sea accesible desde internet.
+Diseñara pantalla de inicio para escoger si iniciar sesión o registrar en app web todo esto subido al hosting y que sea accesible desde internet.
+
+19/05/2020- Migrar mi base de datos de un servidor a otro debido a que el primero que hice me da muchísimos fallos, invertí bastante tiempo en encontrar una gratuita y que funcionase
+y al final me quede con esta www.freemysqlhosting.net.
+Investigando otras formas de insertar datos mediante la app en android. Lo mirare en otro momento porque estoy perdiendo mucho tiempo.
+Actualización modelo entidad relación y modelo relacional.
+Hacer login app web contra la base de datos online,2 horas "perdidas" porque en la base de datos tenía contraseña y nunca me diera problema y
+al hacer el select y al poner contraseña me daba problemas y resulta que fue ir a la base de datos y cambiar la n por la ñ(pasar de contraseña a contrasena) y listo.
 
 
 
