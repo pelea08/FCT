@@ -26,5 +26,11 @@ Actualización modelo entidad relación y modelo relacional.
 Hacer login app web contra la base de datos online,2 horas "perdidas" porque en la base de datos tenía contraseña y nunca me diera problema y
 al hacer el select y al poner contraseña me daba problemas y resulta que fue ir a la base de datos y cambiar la n por la ñ(pasar de contraseña a contrasena) y listo.
 
+20/05/2020- Adquiri otro hosting gratuito debido a que me esta dando muchos problemas el que tengo para ejecutar el fragmento de codigo de php almacenado y me he informado y esta es la conclusion.
+Despues de mucho tiempo haciendo pruebas voy a probar a hacer otro metodo difrente de insercion de datos porque este me da muchisimos problemas.
+Consegui solucionar tanto el login como el registrarse de la app movil y web la solucion final fue cambiar absolutamnete todo de hosting y desde este nuevo hosting me dejo hacer todo sin errores.
+Problemas a la hora de insertar fecha desde la app movil consegui solucionarlo.
+
+
 
 
