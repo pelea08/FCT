@@ -24,13 +24,17 @@ y al final me quede con esta www.freemysqlhosting.net.
 Investigando otras formas de insertar datos mediante la app en android. Lo mirare en otro momento porque estoy perdiendo mucho tiempo.
 Actualización modelo entidad relación y modelo relacional.
 Hacer login app web contra la base de datos online,2 horas "perdidas" porque en la base de datos tenía contraseña y nunca me diera problema y
-al hacer el select y al poner contraseña me daba problemas y resulta que fue ir a la base de datos y cambiar la n por la ñ(pasar de contraseña a contrasena) y listo.
+al hacer el select y al poner contraseña me daba problemas y resulta que fue ir a la base de datos y cambiar la n por la ñ(pasar de contraseña a contraseña) y listo.
 
-20/05/2020- Adquiri otro hosting gratuito debido a que me esta dando muchos problemas el que tengo para ejecutar el fragmento de codigo de php almacenado y me he informado y esta es la conclusion.
-Despues de mucho tiempo haciendo pruebas voy a probar a hacer otro metodo difrente de insercion de datos porque este me da muchisimos problemas.
-Consegui solucionar tanto el login como el registrarse de la app movil y web la solucion final fue cambiar absolutamnete todo de hosting y desde este nuevo hosting me dejo hacer todo sin errores.
-Problemas a la hora de insertar fecha desde la app movil consegui solucionarlo.
+20/05/2020- Adquirí otro hosting gratuito debido a que me está dando muchos problemas el que tengo para ejecutar el fragmento de código de php almacenado y me he informado y esta es la conclusión.
+Después de mucho tiempo haciendo pruebas voy a probar a hacer otro método diferente de inserción de datos porque este me da muchísimos problemas.
+Conseguí solucionar tanto el login como el registrarse de la app móvil y web la solución final fue cambiar absolutamente todo de hosting y desde este nuevo hosting me dejo hacer todo sin errores.
+Problemas a la hora de insertar fecha desde la app móvil, conseguí solucionarlo.
 
+21/05/2020- Diseño y planificación de la pantalla que va a ver el usuario una vez logeado de manera exitosa en la app móvil.
+Volví a corregir el tema de las claves foráneas que las tenias mal referenciadas.
+Me estoy encontrando con problemas a la hora pasar de la pantalla login a visualizar las publicaciones. 
+Conseguí solucionarlo ahora las fotos a mostrar y valores toca extraelos de la base de datos para mostrarlo en el móvil.
 
 
 
