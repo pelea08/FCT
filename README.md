@@ -36,5 +36,14 @@ Volví a corregir el tema de las claves foráneas que las tenias mal referenciad
 Me estoy encontrando con problemas a la hora pasar de la pantalla login a visualizar las publicaciones. 
 Conseguí solucionarlo ahora las fotos a mostrar y valores toca extraelos de la base de datos para mostrarlo en el móvil.
 
+22/05/2020- Modifique la base de datos otra vez porque tenia los nombres incorrectos.
+Entre las 11,30 y las 14,00 horas tuve que llevar a mi madre a urgencias debido a que tuvo un accidente laboral, pongo esto por si se ve una difrencia de cantidad de 
+trabajo respecto a los otros dias aun asi el resto del dia hasta la noche seguire trabajando como siempre.
+Al insertar usuarios nuevos debido a que puse el tema de las claves foraneas de manera adecuada ahora me esta dando problemas.
+Consegui solucionarlo.
+Mediante jdbc ahora voy extraer los datos de mi base de datos como por ejemplo,despues de probar muchas cosas me doy de cuenta que esta obsoleto  da problemas y me pongo rumbo a aprender 
+implementar Rest API.
+
+
 
 
