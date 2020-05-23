@@ -44,6 +44,12 @@ Consegui solucionarlo.
 Mediante jdbc ahora voy extraer los datos de mi base de datos como por ejemplo,despues de probar muchas cosas me doy de cuenta que esta obsoleto  da problemas y me pongo rumbo a aprender 
 implementar Rest API.
 
+23/05/2020-Adaptanción para que en versiones superiores a android 7 no me dea problemas al pedir el archivo de la sentencia insert o select.
+Cambiar los textview del año,mes y día por un calendario,tengo que usar el datepicker pero me esta dando problemas y tengo que cambiar bastnates cosas.
+Al final lo solucione hice un datepicker mediante show dialog al pulsar un boton muestra el calendario porque me daba muchos problemas.
+Porfin consegui solucionar el problema que ayer a la noche me estuvo ayudando javi que en su momento le hice un apaño.
+Implementando restFul y me funciono soy capaz mediante la app del movil hacer consulta y que me devuelva por ejemplo el titulo de las publicaciones.
+
 
 
 
