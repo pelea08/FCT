@@ -50,6 +50,11 @@ Al final lo solucione hice un datepicker mediante show dialog al pulsar un boton
 Porfin consegui solucionar el problema que ayer a la noche me estuvo ayudando javi que en su momento le hice un apaño.
 Implementando restFul y me funciono soy capaz mediante la app del movil hacer consulta y que me devuelva por ejemplo el titulo de las publicaciones.
 
+24/05/2020-Adaptando todo lo de restful(app movil) a para que aparezca toda la infromación colocada de la manera adecuada, despues de invertir mucho tiempo me esta dando problemas coger la ruta de la 
+imagen y visualizarla lo voy dejar para otro momento y mientras tanto voy a pensar y hacer el diseño de la app web una vez logeado el usuario.
+Investigando como consumir Rest con Json en HTML, estoy probando metodos distintos y me esta costando muchisimo ponerlo a funcionar.
+He consegui visualizar por ejemplo los nombres de las publicaciones(online) en el HTML ahora tengo que conseguir hacer publicaciones con los datos obtenidos.
+
 
 
 
