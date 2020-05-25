@@ -55,6 +55,11 @@ imagen y visualizarla lo voy dejar para otro momento y mientras tanto voy a pens
 Investigando como consumir Rest con Json en HTML, estoy probando metodos distintos y me esta costando muchisimo ponerlo a funcionar.
 He consegui visualizar por ejemplo los nombres de las publicaciones(online) en el HTML ahora tengo que conseguir hacer publicaciones con los datos obtenidos.
 
+25/05/2020-Diseñando el bucle para que me genere unas lightbox con las fotos y titulos de la base de datos mediante JavaScript.
+Mejorando el diseño de la app web, añadir pagina para añadir publicaciones que se añada a la base de datos online y diseñarla.
+Problemas a la hora de añadir porque me esta costando subir la foto al hosting de manera automatica ala añadir la publicacion.
+Me inserta todo correctamente pero la foto me da problemas.
+
 
 
 
