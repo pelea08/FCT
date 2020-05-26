@@ -32,33 +32,37 @@ Conseguí solucionar tanto el login como el registrarse de la app móvil y web l
 Problemas a la hora de insertar fecha desde la app móvil, conseguí solucionarlo.
 
 21/05/2020- Diseño y planificación de la pantalla que va a ver el usuario una vez logeado de manera exitosa en la app móvil.
-Volví a corregir el tema de las claves foráneas que las tenias mal referenciadas.
+Volví a corregir el tema de las claves foráneas que las tenías mal referenciadas.
 Me estoy encontrando con problemas a la hora pasar de la pantalla login a visualizar las publicaciones. 
 Conseguí solucionarlo ahora las fotos a mostrar y valores toca extraelos de la base de datos para mostrarlo en el móvil.
 
-22/05/2020- Modifique la base de datos otra vez porque tenia los nombres incorrectos.
-Entre las 11,30 y las 14,00 horas tuve que llevar a mi madre a urgencias debido a que tuvo un accidente laboral, pongo esto por si se ve una difrencia de cantidad de 
-trabajo respecto a los otros dias aun asi el resto del dia hasta la noche seguire trabajando como siempre.
-Al insertar usuarios nuevos debido a que puse el tema de las claves foraneas de manera adecuada ahora me esta dando problemas.
-Consegui solucionarlo.
-Mediante jdbc ahora voy extraer los datos de mi base de datos como por ejemplo,despues de probar muchas cosas me doy de cuenta que esta obsoleto  da problemas y me pongo rumbo a aprender 
+22/05/2020- Modifique la base de datos otra vez porque tenía los nombres incorrectos.
+Entre las 11,30 y las 14,00 horas tuve que llevar a mi madre a urgencias debido a que tuvo un accidente laboral, pongo esto por si se ve una diferencia de cantidad de 
+trabajo respecto a los otros días aun así el resto del día hasta la noche seguiré trabajando como siempre.
+Al insertar usuarios nuevos debido a que puse el tema de las claves foráneas de manera adecuada ahora me está dando problemas.
+Conseguí solucionarlo.
+Mediante JDBC ahora voy a extraer los datos de mi base de datos como, por ejemplo, después de probar muchas cosas me doy de cuenta que está obsoleto  da problemas y me pongo rumbo a aprender 
 implementar Rest API.
 
-23/05/2020-Adaptanción para que en versiones superiores a android 7 no me dea problemas al pedir el archivo de la sentencia insert o select.
-Cambiar los textview del año,mes y día por un calendario,tengo que usar el datepicker pero me esta dando problemas y tengo que cambiar bastnates cosas.
+23/05/2020-Adaptanción para que en versiones superiores a android 7 no me sea problemas al pedir el archivo de la sentencia insert o select.
+Cambiar los textview del año, mes y día por un calendario, tengo que usar el datepicker, pero me está dando problemas y tengo que cambiar bastantes cosas.
 Al final lo solucione hice un datepicker mediante show dialog al pulsar un boton muestra el calendario porque me daba muchos problemas.
-Porfin consegui solucionar el problema que ayer a la noche me estuvo ayudando javi que en su momento le hice un apaño.
-Implementando restFul y me funciono soy capaz mediante la app del movil hacer consulta y que me devuelva por ejemplo el titulo de las publicaciones.
+Por fin conseguí solucionar el problema que ayer a la noche me estuvo ayudando Javi que en su momento le hice un apaño.
+Implementando restFul y me funciono soy capaz mediante la app del móvil hacer consulta y que me devuelva por ejemplo el título de las publicaciones.
 
-24/05/2020-Adaptando todo lo de restful(app movil) a para que aparezca toda la infromación colocada de la manera adecuada, despues de invertir mucho tiempo me esta dando problemas coger la ruta de la 
-imagen y visualizarla lo voy dejar para otro momento y mientras tanto voy a pensar y hacer el diseño de la app web una vez logeado el usuario.
-Investigando como consumir Rest con Json en HTML, estoy probando metodos distintos y me esta costando muchisimo ponerlo a funcionar.
-He consegui visualizar por ejemplo los nombres de las publicaciones(online) en el HTML ahora tengo que conseguir hacer publicaciones con los datos obtenidos.
+24/05/2020-Adaptando todo lo de restful(app móvil) a para que aparezca toda la información colocada de la manera adecuada, después de invertir mucho tiempo me está dando problemas coger la ruta de la 
+imagen y visualizarla lo voy a dejar para otro momento y mientras tanto voy a pensar y hacer el diseño de la app web una vez logeado el usuario.
+Investigando como consumir Rest con Json en HTML, estoy probando métodos distintos y me está costando muchísimo ponerlo a funcionar.
+He conseguido visualizar por ejemplo los nombres de las publicaciones(online) en el HTML ahora tengo que conseguir hacer publicaciones con los datos obtenidos.
 
-25/05/2020-Diseñando el bucle para que me genere unas lightbox con las fotos y titulos de la base de datos mediante JavaScript.
-Mejorando el diseño de la app web, añadir pagina para añadir publicaciones que se añada a la base de datos online y diseñarla.
-Problemas a la hora de añadir porque me esta costando subir la foto al hosting de manera automatica ala añadir la publicacion.
-Me inserta todo correctamente pero la foto me da problemas.
+25/05/2020-Diseñando el bucle para que me genere un light box con las fotos y títulos de la base de datos mediante JavaScript.
+Mejorando el diseño de la app web, añadir página para añadir publicaciones que se añada a la base de datos online y diseñarla.
+Problemas a la hora de añadir porque me está costando subir la foto al hosting de manera automática ala añadir la publicación.
+Me inserta todo correctamente, pero la foto me da problemas.
+
+26/05/2020-Sigo rompiendo la cabeza con como insertar la foto, me costó mucho, pero lo conseguí el gran problema es que mi hosting tenía una protección del tema de los permisos
+y pese que los permisos estaban bien al tener la protección impedía la subida. 
+Mejora formularia de publicación.
 
 
 
