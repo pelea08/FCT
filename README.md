@@ -64,6 +64,12 @@ Me inserta todo correctamente, pero la foto me da problemas.
 y pese que los permisos estaban bien al tener la protección impedía la subida. 
 Mejora formularia de publicación.
 
+27/05/2020-Volvemos a la app movil a intentar consumir json de manera adecuada la foto me da problemas al convertir a bitmap la url de a foto.
+Lo unico que consegui fue que me muestre e titulo asociado pero la foto me de un error de red y me esta volviendo loco.
+Descubri que la manera que lo tengo que hacer es mediante AsynkTask la cuestion es que lo adapte y las fotos no me las convierte bien hice una dura tarea de depuración a fondo
+pero no lo consegui solucionar y tengo dudas si en realidad el problema es de mi hodting y no de mi codigo. Mañana investigare un poco mas al respecto.
+
+
 
 
 
