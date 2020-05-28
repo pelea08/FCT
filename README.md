@@ -64,10 +64,19 @@ Me inserta todo correctamente, pero la foto me da problemas.
 y pese que los permisos estaban bien al tener la protección impedía la subida. 
 Mejora formularia de publicación.
 
-27/05/2020-Volvemos a la app movil a intentar consumir json de manera adecuada la foto me da problemas al convertir a bitmap la url de a foto.
-Lo unico que consegui fue que me muestre e titulo asociado pero la foto me de un error de red y me esta volviendo loco.
-Descubri que la manera que lo tengo que hacer es mediante AsynkTask la cuestion es que lo adapte y las fotos no me las convierte bien hice una dura tarea de depuración a fondo
-pero no lo consegui solucionar y tengo dudas si en realidad el problema es de mi hodting y no de mi codigo. Mañana investigare un poco mas al respecto.
+27/05/2020-Volvemos a la app móvil a intentar consumir json de manera adecuada la foto me da problemas al convertir a bitmap la url de a foto.
+Lo único que conseguí fue que me muestre y título asociado pero la foto me dé un error de red y me está volviendo loco.
+Descubrí que la manera que lo tengo que hacer es mediante AsynkTask la cuestión es que lo adapte y las fotos no me las convierte bien hice una dura tarea de depuración a fondo
+pero no lo conseguí solucionar y tengo dudas si en realidad el problema es de mi hosting y no de mi código. Mañana investigare un poco más al respecto.
+
+28/05/2020-Sigo con lo de ayer que creo que estoy a punto de conseguirlo. Si meto en un enlace de una foto cualquiera de internet me funciona y hace lo que tiene que hacer.
+Después de probar mil cosas más y saber que el error es de tipo 403 de redirección y aun así leer mucho en internet me sigue haciendo el mismo comportamiento y he pedido ayuda a javi.
+Javi me ayudo y simplemente tenía todo correcto y fue añadir una línea de código que dice que antes de cargar todo pasa por mi aplicación web y así las fotos las carga porque esto es una
+medida de protección que hace el hosting para tener menos tráfico.
+Hacer botones flotantes en la pantalla de cuando te logues y ves todas las publicaciones un botón flotante te cierra sesión y te lleva a la ventana en donde eliges si iniciar sesión
+o registrarte y el otro botón flotante te lleva a una pantalla donde añades una publicación. Diseñar pantalla de añadir publicación.
+Problemas a la hora de insertar datos en la base de datos.
+
 
 
 
