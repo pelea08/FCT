@@ -77,6 +77,11 @@ Hacer botones flotantes en la pantalla de cuando te logues y ves todas las publi
 o registrarte y el otro botón flotante te lleva a una pantalla donde añades una publicación. Diseñar pantalla de añadir publicación.
 Problemas a la hora de insertar datos en la base de datos.
 
+29/05/2020- Abrir todos los archivos php y organizar el codigo y borrar el que sobra. Añadir cosas ante-proyecto. 
+Consegui añadir titulo y categoria desde app movil  ahora investigar el tema de subir foto desde el movil.
+Llevo toda la tarde probando difrentes formas y codigos para insertar x foto de la galeria de mi movil a la base de datos y nada tambien probe localhost.
+
+
 
 
 
