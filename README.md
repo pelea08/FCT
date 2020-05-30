@@ -81,8 +81,9 @@ Problemas a la hora de insertar datos en la base de datos.
 Consegui añadir titulo y categoria desde app movil  ahora investigar el tema de subir foto desde el movil.
 Llevo toda la tarde probando difrentes formas y codigos para insertar x foto de la galeria de mi movil a la base de datos y nada tambien probe localhost.
 
-
-
+30/05/2020- Sigo investigando como subir las pero me da muchos problemas todos los metodos que probe y creo que lo voy dejar para otro momento.
+Establecer sesiones php para por ejemplo no puedas añadir una publicacion o ver publicaciones sin loguearte con anterioridad, al ser con la base de datos online me dio algunos errores.
+Modularice  codigo del php.
 
 
 
