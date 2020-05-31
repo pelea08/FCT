@@ -77,13 +77,22 @@ Hacer botones flotantes en la pantalla de cuando te logues y ves todas las publi
 o registrarte y el otro botón flotante te lleva a una pantalla donde añades una publicación. Diseñar pantalla de añadir publicación.
 Problemas a la hora de insertar datos en la base de datos.
 
-29/05/2020- Abrir todos los archivos php y organizar el codigo y borrar el que sobra. Añadir cosas ante-proyecto. 
-Consegui añadir titulo y categoria desde app movil  ahora investigar el tema de subir foto desde el movil.
-Llevo toda la tarde probando difrentes formas y codigos para insertar x foto de la galeria de mi movil a la base de datos y nada tambien probe localhost.
 
-30/05/2020- Sigo investigando como subir las pero me da muchos problemas todos los metodos que probe y creo que lo voy dejar para otro momento.
-Establecer sesiones php para por ejemplo no puedas añadir una publicacion o ver publicaciones sin loguearte con anterioridad, al ser con la base de datos online me dio algunos errores.
-Modularice  codigo del php.
+29/05/2020- Abrir todos los archivos php y organizar el código y borrar el que sobra. Añadir cosas anteproyecto. 
+Conseguí añadir título y categoría desde app móvil  ahora investigar el tema de subir foto desde el móvil.
+Llevo toda la tarde probando diferentes formas y códigos para insertar x foto de la galería de mi móvil a la base de datos y nada también probé localhost.
+
+30/05/2020- Sigo investigando como subir las, pero me da muchos problemas todos los métodos que probé y creo que lo voy a dejar para otro momento.
+Establecer sesiones php para por ejemplo no puedas añadir una publicación o ver publicaciones sin loguearte con anterioridad, al ser con la base de datos online me dio algunos errores.
+Modularice  código del php.
+
+31/05/2020- Encriptar todas las contraseñas de la base de datos, al cambiar esto tuve que cambiar todos mis fragmentos de código php del login porque hay que 
+descifrar y probé diferentes métodos de encriptación.
+Realice la página de eliminar publicaciones, de momento lo que tengo echo es si yo me logeo y voy al apartado borrar publicaciones en la página solo aparecen 
+mis publicaciones no todas en general todo esto en la app web.
+
+
+
 
 
 
