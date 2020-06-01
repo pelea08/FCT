@@ -91,6 +91,10 @@ descifrar y probé diferentes métodos de encriptación.
 Realice la página de eliminar publicaciones, de momento lo que tengo echo es si yo me logeo y voy al apartado borrar publicaciones en la página solo aparecen 
 mis publicaciones no todas en general todo esto en la app web.
 
+01/06/2020- Modificación en donde añado publicaciones para detectar automáticamente el usuario que lo publica.
+Me está dando muchos problemas que el usuario cuando pinchas en su foto se borre automáticamente lo estoy haciendo mediante jQuery pero me da mil problemas.
+Después de dedicar casi toda la tarde cambie la forma y fui capaz de realizar el objetivo.
+Mejoras generales de diseño en la página de borrar publicaciones.
 
 
 
