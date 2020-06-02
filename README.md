@@ -96,6 +96,12 @@ Me está dando muchos problemas que el usuario cuando pinchas en su foto se borr
 Después de dedicar casi toda la tarde cambie la forma y fui capaz de realizar el objetivo.
 Mejoras generales de diseño en la página de borrar publicaciones.
 
+02/06/2020-Volvi a lo de añadir publicación desde el movil que tantos problemas y nada despues de dedicarle bastante horas estoy en la misma pero de difrente manera y he cedido
+pedirle ayuda a javi.
+Realización de contador de seguidores de cada usuario en la pantalla de inicio todo esto vinculado a la base de datos online.
+Tambien añadi un contador de publicaciones de cada usuario.
+Colocación de botones dinámica para hacer un comentario o bien seguir al usuario que la subio(aun no les di funcionalidad).
+
 
 
 
