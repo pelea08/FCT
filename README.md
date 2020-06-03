@@ -102,6 +102,15 @@ Realización de contador de seguidores de cada usuario en la pantalla de inicio 
 Tambien añadi un contador de publicaciones de cada usuario.
 Colocación de botones dinámica para hacer un comentario o bien seguir al usuario que la subio(aun no les di funcionalidad).
 
+03/06/2020-Consegui mediante JavaScript filtrar por categorías las fotos que queremos ver en la página principal.
+Posicionar las fotos que se muestran en la página de la manera más "bonita" que pude tanto en borraPublicaciones como inicioPublicaciones.
+El gran error que me volvió loco  a la hora de subir foto desde la app móvil era una chorrada y es que las fotos que realizamos desde la 
+cámara no deja subirla(ya investigué, pero valoré con javi dejar eso más para delante) en cambio cualquier otra sí.
+Mejore la inserción de publicaciones desde la app Android y ahora me añade el usuario que lo envía y la categoría.
+
+
+
+
 
 
 
