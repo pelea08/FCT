@@ -108,6 +108,13 @@ El gran error que me volvió loco  a la hora de subir foto desde la app móvil e
 cámara no deja subirla(ya investigué, pero valoré con javi dejar eso más para delante) en cambio cualquier otra sí.
 Mejore la inserción de publicaciones desde la app Android y ahora me añade el usuario que lo envía y la categoría.
 
+04/06/2020-Cambiar el archivo php de registro desde el movil porque se me olvido cambiar lo del cifrado de la contraseña.
+Diseñando el recyclerView de la pantalla para borrar las publicaciones y que solo aparezcan las  publicaciones del usuario logueado.
+Me esta dando problemas mi implmentacion de Restful en mi hosting, consegui solucionarlo.
+No se que me pasa con el recycle pero no me muestra lo que deberia, despues de invertir media tarde depurando como un loco usando log y haciendo mil pruebas  sigo sin ver el error,
+aun asi tengo sospecha de que mi hosting esta haciendo de las suyas o algo relacionado con el volley(consume el json y apartir e ahi juegas con arraylist y alamcenas 
+informacion o lo que te interese)
+
 
 
 
