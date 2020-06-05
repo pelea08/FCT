@@ -115,6 +115,14 @@ No se que me pasa con el recycle pero no me muestra lo que deberia, despues de i
 aun asi tengo sospecha de que mi hosting esta haciendo de las suyas o algo relacionado con el volley(consume el json y apartir e ahi juegas con arraylist y alamcenas 
 informacion o lo que te interese)
 
+05/06/2020-Uf porfin consegui solucionar el problema y ademas ahorre muchisimo codigo innecesario tuve que modificar la clase generar un constructor disitnto y en vez de usar el volley 
+2 veces para consumir json lo uso solo en la pantalla de inicio y ahi juego con variables estaticas y con pocas lineas de codigo consegui hacer la pantalla de borrar publicaciones
+y segun el usuario que se loguea al principio le apareceran solo sus publicaciones.
+Mejora del diseño de boton comentarios y seguir.
+Consegui borrar publicaciones solo del usuario que se acaba de loguear mediante rest y despues hice un boton en donde se visualizan todas las publicaciones para recargar las publicaciones
+y visualizar los actuales.
+
+
 
 
 
