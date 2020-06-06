@@ -122,6 +122,14 @@ Mejora del diseño de boton comentarios y seguir.
 Consegui borrar publicaciones solo del usuario que se acaba de loguear mediante rest y despues hice un boton en donde se visualizan todas las publicaciones para recargar las publicaciones
 y visualizar los actuales.
 
+06/06/2020- Intentando dar funcionalidad al boton de seguir que cuadno se pulsa detecta a quien pertence y mediante determindas consultas a la base 
+de datos añade la relación.
+Me esta dando bastantes problemas porque al jugar en un mismo sitio con javaScript y php me esta dando problemas.
+Desisti y voy a probar haciendolo mediante Rest.
+Sigo sin ser capaz debido a que la configuración del POST me da muchos problemas y creo que me conmpensa mas de la otra manera.
+Mañana tomo una decision y si sigo sin ser capaz le pedire ayuda a Mila.
+
+
 
 
 
