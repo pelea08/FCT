@@ -129,6 +129,12 @@ Desisti y voy a probar haciendolo mediante Rest.
 Sigo sin ser capaz debido a que la configuración del POST me da muchos problemas y creo que me conmpensa mas de la otra manera.
 Mañana tomo una decision y si sigo sin ser capaz le pedire ayuda a Mila.
 
+07/06/2020-He analizado y me he decantando a hacerlo mediante php.
+Porfin consegui insertarlo basicamnete lo que pasaba es que al pasar la variablde JavaScript a Php me daba problemas hasta que encotre la manera adecuada de pasar el valor.
+Añadi un contador para saber cuantos te sigue y tambien poder ver tu nombre de usuario,respecto al diseño web es temporal pero ahora me interesa mas hacer lo dificl darle funcionalidad.
+Investigando como darle funcionalidad al tema de los comentarios.
+Sigo sin ser capaz de poner a funcionar como quiero la ventana modal,mañana seguire intentándolo.
+
 
 
 
