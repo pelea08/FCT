@@ -135,6 +135,10 @@ Añadi un contador para saber cuantos te sigue y tambien poder ver tu nombre de 
 Investigando como darle funcionalidad al tema de los comentarios.
 Sigo sin ser capaz de poner a funcionar como quiero la ventana modal,mañana seguire intentándolo.
 
+08/06/2020-Después de una larga lucha consegui que me mostrara una ventana modal con el texto determinado asociado a cada boton que tu pinchas de cada imagen.
+Pensando como insertar comentarios en la base de datos, lo voy pasar a papel porque esta siendo un lio al tener que jugar con la ventana modal no me doy aclarado.
+Me esta dando muchísimos problemas,llevo gran parte de la tarde averiguando porque no me detecta la funcion y lo estoy ejecutando de mil formas distintas.
+Borre y volvi empezar pero estoy igual que antes  mañana volvere a retomar y si no le enviare un mensaje a Mila.
 
 
 
