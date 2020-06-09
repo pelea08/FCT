@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">iFream</string>
+    <string name="iniciarsesion">Login</string>
+    <string name="regis">Register</string>
+    <string name="titulo">iFream</string>
+    <string name="nombreusuario">Username</string>
+    <string name="pass">Password</string>
+</resources>

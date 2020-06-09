@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">iFream</string>
+    <string name="iniciarsesion">Iniciar Sesión</string>
+    <string name="regis">Registrarse</string>
+    <string name="titulo">iFream</string>
+    <string name="nombreusuario">Nombre Usuario</string>
+    <string name="pass">Contraseña</string>
+
+    <string-array name="genero">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+
+    <string-array name="categoria">
+        <item>Autmoviles</item>
+        <item>Moda</item>
+        <item>Tencologia</item>
+        <item>Bricolage</item>
+        <item>Arte</item>
+        <item>Comida</item>
+        <item>Deportes</item>
+    </string-array>
+</resources>
