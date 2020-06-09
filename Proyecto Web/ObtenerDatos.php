@@ -14,18 +14,10 @@ if ($conexion->connect_error) {
     $result = mysqli_query($conexion, $query);
     if (!empty($result)) {
         $res = mysqli_fetch_array($result);
-
-
-
 ?>
-
-
-        <!-- Mostrando la descripción de la base de datos-->
-
+<!-- Visualizamos los datos de la base de datos -->
         <div class='modal-text'><?php echo $res[0] ?></div>
-
 <?php
-
     } /*  <div class='modal-text'><?php echo $result[0]["comentarios"] ?></div> */
 }
 ?>

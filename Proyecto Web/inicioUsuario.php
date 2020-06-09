@@ -204,7 +204,7 @@ if (!isset($usuario)) {
             <!-- <h1>iFream</h1> -->
             <label class="navbar-brand" for="fname">Seguidores: <?php echo $contadorSeguidores['total']; ?> Publicaciónes: <?php echo $contadorPublicaciones['total']; ?>Seguidos: <?php echo $contadorSeguidos['total']; ?></label>
             <br>
-            <label class="navbar-brand" for="fname">Nombre Usuario: <?php echo $usuario; ?> </label>
+            <label class="navbar-brand" id="nombreUsuario"  for="fname">Nombre Usuario: <?php echo $usuario; ?> </label>
             <br>
             <a class="navbar-brand" href="http://fctulises.atwebpages.com/web/inicioUsuario.php"><input type="image" id="logout" alt="Login" src="http://fctulises.atwebpages.com/web/logo.png"></a>
             <div class="navbar-collapse collapse">
@@ -263,13 +263,26 @@ if (!isset($usuario)) {
 
     <script>
         function com() {
-            var bla = $('#faname').val();
-            var a=document.getElementById("comentarios").value;
-            console.log(a+"");
-            //Enviar variable usuario concatenada
-            $('#conte-modal1').load('ObtenerDatos1.php?my_modal=' + bla+'&a='+a, function() {
 
-            });
+            var botones1 = document.getElementsByClassName('btn btn-default navbar-btn');
+
+            for (var i = 0; i < botones1.length; i++) {
+                botones1[i].addEventListener("click", capturar2);
+            }
+
+            function capturar2() {
+
+                var bla = $('#faname').val().toString();
+                //Me esta cogiendo la primera vuelta
+                //Cuestion me tiene que detectar 
+                /* var a = document.getElementById("comentarios").value; */
+                var a = this.value;
+                console.log(a + "");
+                console.log(bla + "");
+                $('#conte-modal1').load('ObtenerDatos1.php?my_modal=' + bla + '&a=' + a, function() {
+
+                });
+            }
         }
     </script>
     <script>

@@ -8,8 +8,6 @@
             if ($conexion->connect_error) {
                 die("Conexión fallida: " . $conexion->connect_error);
             } else {
-                /* $var_PHP2 = $_GET["resIDD"];
-            $var_PHP3 = $_GET["bla"]; */
                 //hacer un select y comprobar si l campo texto es vacio si lo es entoces hacer insert y si no hacer update con el concat
                 /*  SELECT Texto from comentarios where IdPublicacionRel=1  */
                 $bla= $_GET["my_modal"];
@@ -25,7 +23,10 @@
                     $updatee = mysqli_query($conexion, $query2);
                 } else {
 
-                    $query3 =  "INSERT INTO `comentarios`( `Texto`, `IdPublicacionRel`) VALUES ('$bla', '$a')";
+                    $omitir = "SET FOREIGN_KEY_CHECKS=0";
+                    mysqli_query($conexion, $omitir);
+        
+                    $query3 =  "INSERT INTO comentarios( Texto, IdPublicacionRel) VALUES ('$bla', '$a')";
 
                     $insertt = mysqli_query($conexion, $query3);
                 }

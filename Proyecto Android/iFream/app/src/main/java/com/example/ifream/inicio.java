@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -46,7 +47,7 @@ public class inicio extends AppCompatActivity {
     public ArrayList<String> almacenContadorVisitas = new ArrayList<String>();
     public ArrayList<String> almacenIDD = new ArrayList<String>();
 
-
+    static Context contextInicio;
     FloatingActionButton añadirFl;
     FloatingActionButton logOutFl, menoFlo;
     RecyclerView rv;
@@ -55,16 +56,19 @@ public class inicio extends AppCompatActivity {
     borrar variables = new borrar();
     FloatingActionButton btnRecarga;
     MiAdaptador pe;
-
+    static public int pos;
+//    static public View.OnClickListener listener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-
+        contextInicio = getApplicationContext();
         añadirFl = findViewById(R.id.floatingActionButton);
         logOutFl = findViewById(R.id.floatingActionButton2);
         menoFlo = findViewById(R.id.floatingActionButton3);
         btnRecarga = findViewById(R.id.btnRecarga);
+
+
         menoFlo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +91,7 @@ public class inicio extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         btnRecarga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,7 +130,7 @@ public class inicio extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(inicio.this, "PASA BRO", Toast.LENGTH_SHORT).show();
+                pos = rv.getChildAdapterPosition(v);
             }
         };
         pe.setOnClickListener(listener);
@@ -171,7 +176,7 @@ public class inicio extends AppCompatActivity {
                             Thread.sleep(3000);
                             almacenImagenesConvertidas.add(fotoActual);
                             variables.almacenImagenesConvertidas2.add(fotoActual);
-                            almacenGeneral.add(new ClasePrincipal(almacenIDD.get(j), almacenImagenesConvertidas.get(j), almacenNombres.get(j), almacenContadorVisitas.get(j),almacenAutor.get(j)));
+                            almacenGeneral.add(new ClasePrincipal(almacenIDD.get(j), almacenImagenesConvertidas.get(j), almacenNombres.get(j), almacenContadorVisitas.get(j), almacenAutor.get(j)));
 //                            String identificador,Bitmap imagen, String nombrePublicacion, String contadorVisitas
                         } catch (ExecutionException e) {
                             e.printStackTrace();

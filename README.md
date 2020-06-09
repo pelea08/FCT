@@ -140,6 +140,14 @@ Pensando como insertar comentarios en la base de datos, lo voy pasar a papel por
 Me esta dando muchísimos problemas,llevo gran parte de la tarde averiguando porque no me detecta la funcion y lo estoy ejecutando de mil formas distintas.
 Borre y volvi empezar pero estoy igual que antes  mañana volvere a retomar y si no le enviare un mensaje a Mila.
 
+09/06/2020- Porfin asi da gusto cambie el metodo de hacerlo y enviar los valores php y ya me funciona.
+Ya consegui que el tema de los comentarios me funciona perfectamente pero tengo un problema que es que solo puedo escribir una palabra en el momento que escribo "hola tio" no me 
+añade pero si escribo "pep" si y ya investigue bastante y lo voy a dejar mas para delante.
+Cada vez que añades una publicación automaticamente te crea un registro relacionado entre el comentario y la publicación.
+Ahora me pongo rumbo a hacer lo de seguir y comentario en android.
+Me esta dando problemas el detectar en el propio recyclerView las pulsaciones a los botones internos que tiene cada publicación.
+Consegui detectar las pulsaciones mas la posicion que pinche y asi despues puedo obtener toda la informacion que quiera. 
+
 
 
 

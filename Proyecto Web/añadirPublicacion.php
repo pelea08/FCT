@@ -156,6 +156,16 @@ window.location.replace('http://www.ejemplo.es');
 
             $query = "INSERT INTO publicaciones (`Titulo`, `Imagen`, `Categoria`,`NombreR`) VALUES ('$titulo','$img1','$categoria','$usuario')";
             mysqli_query($conexion, $query);
+            //por cada imagen que se inserte
+            $query3 = "SELECT Identificador FROM publicaciones where Titulo='$titulo'";
+            $verificar = mysqli_query($conexion, $query3);
+            if ($verificar) {
+                $identificador = mysqli_fetch_array($verificar);
+                /* SET FOREIGN_KEY_CHECKS=0; */
+                //Insertar comentario vacio
+                $query4 = "INSERT into comentarios (Texto,IdPublicacionRel) VALUES ('','$identificador[0]')";
+                mysqli_query($conexion, $query4);
+            }
         }
         ?>
     </script>
