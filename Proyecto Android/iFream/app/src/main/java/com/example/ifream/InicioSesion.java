@@ -2,10 +2,8 @@ package com.example.ifream;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,10 +28,8 @@ import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
-public class inicioSesion extends AppCompatActivity {
+public class InicioSesion extends AppCompatActivity {
     Button btnInicio;
     EditText usuario, contraseña;
     static String auxResultado;
@@ -72,10 +68,10 @@ public class inicioSesion extends AppCompatActivity {
                         entrar = false;
                     }
                     if (entrar) {
-                        Intent intent = new Intent(inicioSesion.this, inicio.class);
+                        Intent intent = new Intent(InicioSesion.this, Inicio.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(inicioSesion.this, "Datos Erroneos", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(InicioSesion.this, "Datos Erroneos", Toast.LENGTH_SHORT).show();
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

@@ -146,7 +146,15 @@ añade pero si escribo "pep" si y ya investigue bastante y lo voy a dejar mas pa
 Cada vez que añades una publicación automaticamente te crea un registro relacionado entre el comentario y la publicación.
 Ahora me pongo rumbo a hacer lo de seguir y comentario en android.
 Me esta dando problemas el detectar en el propio recyclerView las pulsaciones a los botones internos que tiene cada publicación.
-Consegui detectar las pulsaciones mas la posicion que pinche y asi despues puedo obtener toda la informacion que quiera. 
+Consegui detectar las pulsaciones mas la posicion que pinche y asi despues puedo obtener toda la informacion que quiera.
+
+10/06/06/2020-Consegui solucionar la pulsación.
+Despues de un duro trabajo consegui que cuando tu le das a seguir se añade en la base de datos la relación en si de manera correcta.
+Planificar como se va a ver al pulsar botón comentarios de cada publicación.
+Consegui hacer que al pulsar comentarios lee los comentarios vinculado a cada publicación determinada consumiendo el restApi.
+Ahora me toca pensar como insertar comentarios.
+Me esta dando problemas a la hora de la inserción del comentario, mañana sigo intentándolo.
+ 
 
 
 

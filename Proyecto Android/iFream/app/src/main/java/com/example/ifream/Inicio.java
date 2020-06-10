@@ -13,7 +13,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.*;
@@ -35,7 +34,7 @@ import java.util.concurrent.ExecutionException;
 
 import static android.os.FileUtils.copy;
 
-public class inicio extends AppCompatActivity {
+public class Inicio extends AppCompatActivity {
 
     RecyclerView.LayoutManager miLayoutManager;
     //    public ArrayList<String> almacenId = new ArrayList<String>();
@@ -53,7 +52,7 @@ public class inicio extends AppCompatActivity {
     RecyclerView rv;
     final String TAG = "MyActivity";
     private RequestQueue queue;
-    borrar variables = new borrar();
+    Borrar variables = new Borrar();
     FloatingActionButton btnRecarga;
     MiAdaptador pe;
     static public int pos;
@@ -72,7 +71,7 @@ public class inicio extends AppCompatActivity {
         menoFlo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(inicio.this, borrar.class);
+                Intent intent = new Intent(Inicio.this, Borrar.class);
                 startActivity(intent);
             }
         });
@@ -80,14 +79,14 @@ public class inicio extends AppCompatActivity {
         logOutFl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(inicio.this, MainActivity.class);
+                Intent intent = new Intent(Inicio.this, MainActivity.class);
                 startActivity(intent);
             }
         });
         añadirFl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(inicio.this, anadirPublicacion.class);
+                Intent intent = new Intent(Inicio.this, AnadirPublicacion.class);
                 startActivity(intent);
             }
         });
@@ -165,7 +164,7 @@ public class inicio extends AppCompatActivity {
                         almacenImagenes.add(foto);
                         almacenContadorVisitas.add(contador);
                         variables.almacenContadorVisitas2.add(contador);
-                        Toast.makeText(inicio.this, "Imagen: " + foto, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Inicio.this, "Imagen: " + foto, Toast.LENGTH_SHORT).show();
                     }
 
                     for (int j = 0; j < almacenImagenes.size(); j++) {

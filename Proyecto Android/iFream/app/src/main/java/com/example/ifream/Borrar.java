@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,24 +15,18 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-import static com.example.ifream.inicio.almacenGeneral;
-
-public class borrar extends AppCompatActivity {
+public class Borrar extends AppCompatActivity {
     RecyclerView.LayoutManager miLayoutManager;
 
     static public ArrayList<ClasePrincipal> almacenGeneral2 = new ArrayList<>();
@@ -52,7 +45,7 @@ public class borrar extends AppCompatActivity {
     static public String posicionPasar = "";
 
     int pos;
-    inicioSesion varaiblesInicio = new inicioSesion();
+    InicioSesion varaiblesInicio = new InicioSesion();
     boolean borrado;
 
     @Override
@@ -98,7 +91,7 @@ public class borrar extends AppCompatActivity {
                 if (pos > -1) {
                     String id = almacenGeneral2.get(pos).getIdentificador();
 
-                    AsyncTask<String, Void, String> des = new borrar.Borrado(getApplicationContext()).execute(id);
+                    AsyncTask<String, Void, String> des = new Borrar.Borrado(getApplicationContext()).execute(id);
 //                    Ejecutar sentencia de delete desde api pasandole el id y via
                     Toast.makeText(getApplicationContext(), "La publicacion ha sido borrada" + id, Toast.LENGTH_SHORT).show();
 

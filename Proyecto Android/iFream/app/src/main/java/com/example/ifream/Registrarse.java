@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -31,12 +30,10 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 
-public class registrarse extends AppCompatActivity {
+public class Registrarse extends AppCompatActivity {
     Button btnRegistrarse, btnFecha;
     EditText nombre, contraseña;
     Spinner spinner;
@@ -78,7 +75,7 @@ public class registrarse extends AppCompatActivity {
                 int mes = c.get(Calendar.MONTH);
                 int año = c.get(Calendar.YEAR);
 
-                d = new DatePickerDialog(registrarse.this, new DatePickerDialog.OnDateSetListener() {
+                d = new DatePickerDialog(Registrarse.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int año, int mes, int dia) {
                         fechaa = año + "/" + mes + "/" + dia;
@@ -103,19 +100,19 @@ public class registrarse extends AppCompatActivity {
                         if (nombre != null && contraseñaC != null) {
                             String generoo = genero;
 
-                            new Registro(registrarse.this).execute(nombreS, contraseñaC, fechaa, generoo);
+                            new Registro(Registrarse.this).execute(nombreS, contraseñaC, fechaa, generoo);
 
                         } else {
-                            Toast.makeText(registrarse.this, "Nombre o contraseña vacios inserte valores", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Registrarse.this, "Nombre o contraseña vacios inserte valores", Toast.LENGTH_SHORT).show();
                         }
 
                     } else {
-                        Toast.makeText(registrarse.this, "Valores en la fecha invalidos debes de tener mas de 17 años", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Registrarse.this, "Valores en la fecha invalidos debes de tener mas de 17 años", Toast.LENGTH_SHORT).show();
                     }
 
 
                 }else{
-                    Toast.makeText(registrarse.this, "Introduzca una fecha pinchando en el boton", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registrarse.this, "Introduzca una fecha pinchando en el boton", Toast.LENGTH_SHORT).show();
                 }
 
 

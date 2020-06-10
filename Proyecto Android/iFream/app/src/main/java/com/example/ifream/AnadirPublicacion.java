@@ -37,7 +37,7 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class anadirPublicacion extends AppCompatActivity {
+public class AnadirPublicacion extends AppCompatActivity {
 
     final String TAG = "añadir";
     Spinner spinner;
@@ -89,14 +89,14 @@ public class anadirPublicacion extends AppCompatActivity {
 //                if (titulo != null) {
 
                 titulo = tit.getText().toString();
-                Toast.makeText(anadirPublicacion.this, "tit: " + titulo, Toast.LENGTH_SHORT).show();
+                Toast.makeText(AnadirPublicacion.this, "tit: " + titulo, Toast.LENGTH_SHORT).show();
 
                 ImageUploadToServerFunction();
-//                    new Añadir(anadirPublicacion.this).execute(titulo, generoo, convertirImgString(bitmap));
+//                    new Añadir(AnadirPublicacion.this).execute(titulo, generoo, convertirImgString(bitmap));
 
 
 //                } else {
-//                    Toast.makeText(anadirPublicacion.this, "Nombre o contraseña vacios inserte valores", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(AnadirPublicacion.this, "Nombre o contraseña vacios inserte valores", Toast.LENGTH_SHORT).show();
 //                }
             }
         });
@@ -116,7 +116,7 @@ public class anadirPublicacion extends AppCompatActivity {
 
         class AsyncTaskUploadClass extends AsyncTask<Void, Void, String> {
             String categoria = catSelecionada;
-            inicioSesion a = new inicioSesion();
+            InicioSesion a = new InicioSesion();
 
             @Override
             protected void onPreExecute() {
@@ -126,7 +126,7 @@ public class anadirPublicacion extends AppCompatActivity {
             @Override
             protected void onPostExecute(String string1) {
                 super.onPostExecute(string1);
-                Toast.makeText(anadirPublicacion.this, string1, Toast.LENGTH_LONG).show();
+                Toast.makeText(AnadirPublicacion.this, string1, Toast.LENGTH_LONG).show();
             }
 
             @Override

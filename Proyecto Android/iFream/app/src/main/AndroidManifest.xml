@@ -16,11 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".borrar" />
-        <activity android:name=".anadirPublicacion" />
-        <activity android:name=".inicio" />
-        <activity android:name=".registrarse" />
-        <activity android:name=".inicioSesion" />
+        <activity android:name=".Comentario"></activity>
+        <activity android:name=".Borrar" />
+        <activity android:name=".AnadirPublicacion" />
+        <activity android:name=".Inicio" />
+        <activity android:name=".Registrarse" />
+        <activity android:name=".InicioSesion" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
