@@ -54,9 +54,11 @@ public class Inicio extends AppCompatActivity {
     private RequestQueue queue;
     Borrar variables = new Borrar();
     FloatingActionButton btnRecarga;
+    FloatingActionButton btnPerf;
     MiAdaptador pe;
     static public int pos;
-//    static public View.OnClickListener listener;
+
+    //    static public View.OnClickListener listener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +68,14 @@ public class Inicio extends AppCompatActivity {
         logOutFl = findViewById(R.id.floatingActionButton2);
         menoFlo = findViewById(R.id.floatingActionButton3);
         btnRecarga = findViewById(R.id.btnRecarga);
-
-
+        btnPerf = findViewById(R.id.btnPerfil);
+        btnPerf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Inicio.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
         menoFlo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class Comentario extends AppCompatActivity {
     TextView txtTexto;
@@ -30,6 +32,7 @@ public class Comentario extends AppCompatActivity {
     MiAdaptador miAdaptador = new MiAdaptador();
     public static String id;
     Button btnAñadir;
+    EditText text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class Comentario extends AppCompatActivity {
         //Hacer un obtener datos volley que apunte a posts1
         //que a su vez a punte a comentarios y pasasmos el id de la publicacion y el resultado = al textview
         btnAñadir = findViewById(R.id.button2);
-
+        text = findViewById(R.id.editText2);
         queue = Volley.newRequestQueue(this);
         try {
             obtenerTexto();
@@ -51,7 +54,29 @@ public class Comentario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                AsyncTask<String, Void, String> des = new InicioSesion.Logeo(getApplicationContext()).execute(nombreS, contraseñaC);
-//                AsyncTask<String, Void, String> des = new  ClaseComentario.Comentario(getApplicationContext()).execute();
+                //id y texto
+                String textoEnviar=text.getText().toString();
+                InicioSesion s=new InicioSesion();
+                String usuario="@"+s.nombreS+":";
+                AsyncTask<String, Void, String> des = new FuncionComentario.Comentario(getApplicationContext()).execute(id,usuario+textoEnviar);
+
+                try {
+                    String aa = des.get();
+                    Thread.sleep(3 * 1000);
+                    //CODIGO QUE DEVUELVE CUANDO EL LOGEO ES EXITOSO
+                    if (aa.trim().equals("gg")) {
+                        Toast.makeText(getApplicationContext(), "Se supone que good", Toast.LENGTH_SHORT).show();
+                        //Si es correcto actualiza lo que ves
+                        obtenerTexto();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "La cagaste", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
 
             }
         });

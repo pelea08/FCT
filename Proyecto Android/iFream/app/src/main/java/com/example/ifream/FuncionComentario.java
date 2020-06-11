@@ -3,6 +3,7 @@ package com.example.ifream;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.EditText;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,11 +20,12 @@ import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-public class ClaseComentario {
 
+public class FuncionComentario {
 
+EditText texto;
 
-    public class Comentario extends AsyncTask<String, Void, String> {
+    public static class Comentario extends AsyncTask<String, Void, String> {
 
         private WeakReference<Context> context;
 
@@ -34,7 +36,7 @@ public class ClaseComentario {
 
         @Override
         protected String doInBackground(String... params) {
-            String registroUrl = "http://fctulises.atwebpages.com/login.php";
+            String registroUrl = "http://fctulises.atwebpages.com/Comentarios.php";
             String resultado;
 
             try {
@@ -45,11 +47,11 @@ public class ClaseComentario {
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
 
-                String nombreee = params[0];
-                String passs = params[1];
+                String id = params[0];
+                String texto = params[1];
 
-                String data = URLEncoder.encode("usuario", "UTF-8") + "=" + URLEncoder.encode(nombreee, "UTF-8")
-                        + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(passs, "UTF-8");
+                String data = URLEncoder.encode("id", "UTF-8") + "=" + URLEncoder.encode(id, "UTF-8")
+                        + "&" + URLEncoder.encode("texto", "UTF-8") + "=" + URLEncoder.encode(texto, "UTF-8");
 
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
@@ -91,7 +93,7 @@ public class ClaseComentario {
 
         public void onPostExecute(String resultado) {
 
-            Log.i(TAG, "" + resultado);
+//            Log.i(TAG, "" + resultado);
 
         }
 

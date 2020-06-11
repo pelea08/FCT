@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Comentario"></activity>
+        <activity android:name=".Perfil"></activity>
+        <activity android:name=".Comentario" />
         <activity android:name=".Borrar" />
         <activity android:name=".AnadirPublicacion" />
         <activity android:name=".Inicio" />

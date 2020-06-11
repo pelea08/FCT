@@ -7,6 +7,20 @@
     tools:context=".Inicio">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFEB3B"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_preferences"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
         android:layout_width="62dp"
         android:layout_height="56dp"
@@ -79,13 +93,13 @@
         android:id="@+id/btnRecarga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:backgroundTint="#FFEB3B"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_rotate"
         app:backgroundTint="#FFEB3B"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@android:drawable/ic_menu_rotate" />
 </androidx.constraintlayout.widget.ConstraintLayout>

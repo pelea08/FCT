@@ -148,13 +148,19 @@ Ahora me pongo rumbo a hacer lo de seguir y comentario en android.
 Me esta dando problemas el detectar en el propio recyclerView las pulsaciones a los botones internos que tiene cada publicación.
 Consegui detectar las pulsaciones mas la posicion que pinche y asi despues puedo obtener toda la informacion que quiera.
 
-10/06/06/2020-Consegui solucionar la pulsación.
+10/06/2020-Consegui solucionar la pulsación.
 Despues de un duro trabajo consegui que cuando tu le das a seguir se añade en la base de datos la relación en si de manera correcta.
 Planificar como se va a ver al pulsar botón comentarios de cada publicación.
 Consegui hacer que al pulsar comentarios lee los comentarios vinculado a cada publicación determinada consumiendo el restApi.
 Ahora me toca pensar como insertar comentarios.
 Me esta dando problemas a la hora de la inserción del comentario, mañana sigo intentándolo.
- 
+
+11/06/2020- Continuo con el tema de insertar Comentarios.
+Me esta dando uno problemas raros de socket exception y no lo doy solucioando.
+Porfin  me funciona y al insertar comentario tambien aparece un @ con el nombre de usuario que inserto ese comentario determinado.
+Voy añadir un boton perfil que accede al usuario que se acaba de loguear y muestra una info determinada.
+Consegui hacer un floatbutton que cuando pinchas te dice el nombre del usuario,el numero de las publicaciones,el número de los seguidores y de los que sigues.
+Ahora me falta darle funcionalidad al boon cerrar sesion y el boton eliminar perfil y salir.
 
 
 
