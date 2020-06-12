@@ -55,10 +55,12 @@
         android:id="@+id/btnComentarios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#ACF881"
         android:text="Comentarios"
-        app:layout_constraintEnd_toStartOf="@+id/btnSeguir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -69,8 +71,20 @@
         android:backgroundTint="#2196f3"
         android:text="Seguir"
         app:layout_constraintBottom_toBottomOf="@+id/btnComentarios"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintStart_toEndOf="@+id/btnComentarios" />
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#F0423A"
+        android:text="Like"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSeguir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnSeguir" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -128,28 +128,20 @@ public class Borrar extends AppCompatActivity {
                 httpURLConnection.setRequestMethod("DELETE");
                 httpURLConnection.setDoOutput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
-
                 outputStream.close();
-
                 InputStream inputStream = httpURLConnection.getInputStream();
-
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
                 StringBuilder stringBuilder = new StringBuilder();
-
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     if (isCancelled())
                         break;
                     stringBuilder.append(line);
-
                 }
                 resultado = stringBuilder.toString();
-
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-
-
             } catch (MalformedURLException e) {
                 Log.d("MiAPP", "Se ha utilizado una URL con formato incorrecto");
                 resultado = "Se ha producido un ERROR";
@@ -157,22 +149,13 @@ public class Borrar extends AppCompatActivity {
                 Log.d("MiAPP", "Error inesperado!, posibles problemas de conexion de red");
                 resultado = "Se ha producido un ERROR, comprueba tu conexion a Internet";
             }
-
-
             return resultado;
-
         }
-
         public void onPostExecute(String resultado) {
 
             Log.i(TAG, "" + resultado);
-
         }
-
-
     }
-
-
     protected void onResume() {
         super.onResume();
         View decorView = getWindow().getDecorView();

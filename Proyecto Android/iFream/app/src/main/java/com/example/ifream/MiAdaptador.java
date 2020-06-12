@@ -27,6 +27,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
 
     public MiAdaptador() {
     }
+
     public MiAdaptador(ArrayList<ClasePrincipal> pelis, RecyclerView rv) {
         this.almacen = pelis;
         this.rv = rv;
@@ -36,15 +37,12 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
         this.listener = listener;
     }
 
-
     @NonNull
     @Override
     public MiAdaptador.Elemento onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View elemento1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.posicion, parent, false);
         elemento1.setOnClickListener(this);
         Elemento recElemento = new MiAdaptador.Elemento(elemento1);
-        int pos = recElemento.getAdapterPosition();
-
         return recElemento;
     }
 
@@ -59,24 +57,19 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
         TextView nombrePubli;
         TextView autor;
         ImageView foto;
-
         Button botonSeguir;
         Button botonComentar;
 
         public Elemento(@NonNull View itemView) {
             super(itemView);
-
             context = itemView.getContext();
-
             this.nombrePubli = itemView.findViewById(R.id.nombrPublicacion);
             this.autor = itemView.findViewById(R.id.txtAutor);
             this.foto = itemView.findViewById(R.id.imageView);
-
             botonSeguir = itemView.findViewById(R.id.btnSeguir);
             botonComentar = itemView.findViewById(R.id.btnComentarios);
         }
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull final MiAdaptador.Elemento holder, final int position) {
@@ -84,8 +77,6 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
         holder.nombrePubli.setText(pe.getNombrePublicacion());
         holder.autor.setText(pe.getautor());
         holder.foto.setImageBitmap(pe.getImagen());
-
-
         holder.botonSeguir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,9 +86,8 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                 InicioSesion a = new InicioSesion();
                 Inicio b = new Inicio();
                 String usuarioActual = a.nombreS;
-
                 String autorPublicacion = b.almacenGeneral.get(position).getautor();
-                posicionSelecionada=b.almacenGeneral.get(position).getIdentificador();
+                posicionSelecionada = b.almacenGeneral.get(position).getIdentificador();
                 Toast.makeText(holder.context, "Esta es la pos que pulse: " + autorPublicacion, Toast.LENGTH_SHORT).show();
                 Seguir s = new Seguir();
                 AsyncTask<String, Void, String> des = new Seguir.seguirr(holder.context).execute(autorPublicacion, usuarioActual);
@@ -120,11 +110,11 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
         holder.botonComentar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a=new Intent(holder.context,Comentario.class);
+                Intent a = new Intent(holder.context, Comentario.class);
                 holder.context.startActivity(a);
-                Comentario c=new Comentario();
+                Comentario c = new Comentario();
                 Inicio b = new Inicio();
-                c.id=b.almacenGeneral.get(position).getIdentificador();
+                c.id = b.almacenGeneral.get(position).getIdentificador();
             }
         });
     }

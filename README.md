@@ -162,6 +162,13 @@ Voy añadir un boton perfil que accede al usuario que se acaba de loguear y mues
 Consegui hacer un floatbutton que cuando pinchas te dice el nombre del usuario,el numero de las publicaciones,el número de los seguidores y de los que sigues.
 Ahora me falta darle funcionalidad al boon cerrar sesion y el boton eliminar perfil y salir.
 
+12/06/2020-Consegui darle funcionalidad a los botones y el de borrar sesion y eliminar perfil me funciona pero me da problemas con los usuarios que estan vinculados a x publicaciones.
+Porque al borrar perfil tambien quiero borrar todas las publicaciones vinculadas y toda las relaciones de la gente que le sigue o el sigue.
+Después de una lucha dura con php consegui meter las sentencias correctas y basicamente apunta a un fragamento PHP online que le pasamos el nombre de usuario y borra todas las entrada
+relacioandas con el.
+Modificación anteproyecto,cambie lo de visualizaciones por Likes,cada publicación tendra de manera dinamica un boton para poder darle like en caso de que te guste y ese valor
+se volcara a una base de datos.
+
 
 
 

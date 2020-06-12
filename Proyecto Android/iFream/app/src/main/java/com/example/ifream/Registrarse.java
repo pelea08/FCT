@@ -37,7 +37,7 @@ public class Registrarse extends AppCompatActivity {
     Button btnRegistrarse, btnFecha;
     EditText nombre, contraseña;
     Spinner spinner;
-    String genero ;
+    String genero;
     String fechaa;
     Calendar c;
     DatePickerDialog d;
@@ -74,7 +74,6 @@ public class Registrarse extends AppCompatActivity {
                 int dia = c.get(Calendar.DAY_OF_MONTH);
                 int mes = c.get(Calendar.MONTH);
                 int año = c.get(Calendar.YEAR);
-
                 d = new DatePickerDialog(Registrarse.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int año, int mes, int dia) {
@@ -83,8 +82,6 @@ public class Registrarse extends AppCompatActivity {
                     }
                 }, dia, mes, año);
                 d.show();
-
-
             }
         });
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
@@ -95,27 +92,19 @@ public class Registrarse extends AppCompatActivity {
 
                 if (banderaFecha) {
                     String[] arrayFehca = fechaa.split("/");
-
                     if (Integer.valueOf(arrayFehca[2]) <= c.get(Calendar.YEAR) - 18) {
                         if (nombre != null && contraseñaC != null) {
                             String generoo = genero;
-
                             new Registro(Registrarse.this).execute(nombreS, contraseñaC, fechaa, generoo);
-
                         } else {
                             Toast.makeText(Registrarse.this, "Nombre o contraseña vacios inserte valores", Toast.LENGTH_SHORT).show();
                         }
-
                     } else {
                         Toast.makeText(Registrarse.this, "Valores en la fecha invalidos debes de tener mas de 17 años", Toast.LENGTH_SHORT).show();
                     }
-
-
-                }else{
+                } else {
                     Toast.makeText(Registrarse.this, "Introduzca una fecha pinchando en el boton", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
     }
@@ -131,7 +120,6 @@ public class Registrarse extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             String registroUrl = "http://fctulises.atwebpages.com/registro.php";
-            //String registroUrl = "http://fctulises.epizy.com/registro.php";
             String resultado;
 
             try {
@@ -146,35 +134,25 @@ public class Registrarse extends AppCompatActivity {
                 String passs = params[1];
                 String fechaa = params[2];
                 String generoo = params[3];
-
                 String data = URLEncoder.encode("usuario", "UTF-8") + "=" + URLEncoder.encode(nombreee, "UTF-8")
                         + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(passs, "UTF-8")
                         + "&" + URLEncoder.encode("fecha", "UTF-8") + "=" + URLEncoder.encode(fechaa, "UTF-8")
                         + "&" + URLEncoder.encode("genero", "UTF-8") + "=" + URLEncoder.encode(generoo, "UTF-8");
-
-
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
-
                 bufferedWriter.close();
                 outputStream.close();
-
                 InputStream inputStream = httpURLConnection.getInputStream();
-
-
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
                 StringBuilder stringBuilder = new StringBuilder();
-
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     stringBuilder.append(line);
                 }
                 resultado = stringBuilder.toString();
-
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-
             } catch (MalformedURLException e) {
                 Log.d("MiAPP", "Se ha utilizado una URL con formato incorrecto");
                 resultado = "Se ha producido un ERROR";
@@ -182,22 +160,15 @@ public class Registrarse extends AppCompatActivity {
                 Log.d("MiAPP", "Error inesperado!, posibles problemas de conexion de red");
                 resultado = "Se ha producido un ERROR, comprueba tu conexion a Internet";
             }
-
-
             return resultado;
         }
-
         public void onPostExecute(String resultado) {
             Toast.makeText(context.get(), "Se añadio correctamente ", Toast.LENGTH_LONG).show();
-
         }
     }
-
-
     @Override
     protected void onResume() {
         super.onResume();
-
         View decorView = getWindow().getDecorView();
         int opciones = View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // Oculta la barra de navegación
@@ -206,7 +177,6 @@ public class Registrarse extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(opciones);
-
         getSupportActionBar().hide();
     }
 }

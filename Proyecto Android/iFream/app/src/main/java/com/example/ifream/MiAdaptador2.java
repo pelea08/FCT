@@ -44,7 +44,6 @@ public class MiAdaptador2 extends RecyclerView.Adapter<MiAdaptador2.Elemento> im
         holder.nombrePubli2.setText(pe.getNombrePublicacion());
         holder.contador.setText(pe.getContadorVisitas());
         holder.foto2.setImageBitmap(pe.getImagen());
-
     }
 
     public void setOnClickListener(View.OnClickListener listener) {

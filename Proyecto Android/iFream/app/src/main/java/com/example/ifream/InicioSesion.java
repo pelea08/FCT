@@ -33,9 +33,7 @@ public class InicioSesion extends AppCompatActivity {
     Button btnInicio;
     EditText usuario, contraseña;
     static String auxResultado;
-
     boolean entrar;
-
     final String TAG = "MyActivity";
     public static String nombreS;
 
@@ -43,7 +41,6 @@ public class InicioSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
-
         btnInicio = findViewById(R.id.btnInicioSesion1);
         usuario = findViewById(R.id.editTextNo);
         contraseña = findViewById(R.id.editTextContr);
@@ -53,10 +50,8 @@ public class InicioSesion extends AppCompatActivity {
                 //Ocultar teclado si no en determinadas dimensiones no se va a ver bien
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(contraseña.getWindowToken(), 0);
-
                 nombreS = usuario.getText().toString();
                 String contraseñaC = contraseña.getText().toString();
-
                 AsyncTask<String, Void, String> des = new Logeo(getApplicationContext()).execute(nombreS, contraseñaC);
                 try {
                     String aa = des.get();
@@ -81,8 +76,6 @@ public class InicioSesion extends AppCompatActivity {
             }
 
         });
-
-
     }
 
     public class Logeo extends AsyncTask<String, Void, String> {
@@ -106,38 +99,27 @@ public class InicioSesion extends AppCompatActivity {
                 httpURLConnection.setDoOutput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
-
                 String nombreee = params[0];
                 String passs = params[1];
-
                 String data = URLEncoder.encode("usuario", "UTF-8") + "=" + URLEncoder.encode(nombreee, "UTF-8")
                         + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(passs, "UTF-8");
-
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
-
                 bufferedWriter.close();
                 outputStream.close();
-
                 InputStream inputStream = httpURLConnection.getInputStream();
-
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
                 StringBuilder stringBuilder = new StringBuilder();
-
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     if (isCancelled())
                         break;
                     stringBuilder.append(line);
-
                 }
                 resultado = stringBuilder.toString();
-
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-
-
             } catch (MalformedURLException e) {
                 Log.d("MiAPP", "Se ha utilizado una URL con formato incorrecto");
                 resultado = "Se ha producido un ERROR";
@@ -145,25 +127,15 @@ public class InicioSesion extends AppCompatActivity {
                 Log.d("MiAPP", "Error inesperado!, posibles problemas de conexion de red");
                 resultado = "Se ha producido un ERROR, comprueba tu conexion a Internet";
             }
-
-
             return resultado;
-
         }
-
         public void onPostExecute(String resultado) {
-
             Log.i(TAG, "" + resultado);
-
         }
-
-
     }
-
     @Override
     protected void onResume() {
         super.onResume();
-
         View decorView = getWindow().getDecorView();
         int opciones = View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // Oculta la barra de navegación
@@ -172,11 +144,6 @@ public class InicioSesion extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(opciones);
-
         getSupportActionBar().hide();
-
-
     }
-
-
 }

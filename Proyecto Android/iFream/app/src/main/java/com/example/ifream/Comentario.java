@@ -53,13 +53,11 @@ public class Comentario extends AppCompatActivity {
         btnAñadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                AsyncTask<String, Void, String> des = new InicioSesion.Logeo(getApplicationContext()).execute(nombreS, contraseñaC);
                 //id y texto
-                String textoEnviar=text.getText().toString();
-                InicioSesion s=new InicioSesion();
-                String usuario="@"+s.nombreS+":";
-                AsyncTask<String, Void, String> des = new FuncionComentario.Comentario(getApplicationContext()).execute(id,usuario+textoEnviar);
-
+                String textoEnviar = text.getText().toString();
+                InicioSesion s = new InicioSesion();
+                String usuario = "@" + s.nombreS + ":";
+                AsyncTask<String, Void, String> des = new FuncionComentario.Comentario(getApplicationContext()).execute(id, usuario + textoEnviar);
                 try {
                     String aa = des.get();
                     Thread.sleep(3 * 1000);
@@ -76,17 +74,12 @@ public class Comentario extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-
             }
         });
-
     }
 
     private void obtenerTexto() {
         String url = "http://fctulises.atwebpages.com/src/post1.php?IdPublicacionRel=" + id;
-
-
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -97,11 +90,8 @@ public class Comentario extends AppCompatActivity {
                         txtTexto.setText(textoComentario);
                     }
                 } catch (JSONException e) {
-
                     e.printStackTrace();
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -124,6 +114,5 @@ public class Comentario extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(opciones);
         getSupportActionBar().hide();
-
     }
 }

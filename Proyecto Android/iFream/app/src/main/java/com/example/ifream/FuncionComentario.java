@@ -23,7 +23,7 @@ import java.nio.charset.StandardCharsets;
 
 public class FuncionComentario {
 
-EditText texto;
+    EditText texto;
 
     public static class Comentario extends AsyncTask<String, Void, String> {
 
@@ -46,38 +46,27 @@ EditText texto;
                 httpURLConnection.setDoOutput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
-
                 String id = params[0];
                 String texto = params[1];
-
                 String data = URLEncoder.encode("id", "UTF-8") + "=" + URLEncoder.encode(id, "UTF-8")
                         + "&" + URLEncoder.encode("texto", "UTF-8") + "=" + URLEncoder.encode(texto, "UTF-8");
-
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
-
                 bufferedWriter.close();
                 outputStream.close();
-
                 InputStream inputStream = httpURLConnection.getInputStream();
-
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
                 StringBuilder stringBuilder = new StringBuilder();
-
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     if (isCancelled())
                         break;
                     stringBuilder.append(line);
-
                 }
                 resultado = stringBuilder.toString();
-
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-
-
             } catch (MalformedURLException e) {
                 Log.d("MiAPP", "Se ha utilizado una URL con formato incorrecto");
                 resultado = "Se ha producido un ERROR";
@@ -85,18 +74,10 @@ EditText texto;
                 Log.d("MiAPP", "Error inesperado!, posibles problemas de conexion de red");
                 resultado = "Se ha producido un ERROR, comprueba tu conexion a Internet";
             }
-
-
             return resultado;
-
         }
-
         public void onPostExecute(String resultado) {
-
 //            Log.i(TAG, "" + resultado);
-
         }
-
-
     }
 }

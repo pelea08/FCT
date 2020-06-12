@@ -37,7 +37,6 @@ import static android.os.FileUtils.copy;
 public class Inicio extends AppCompatActivity {
 
     RecyclerView.LayoutManager miLayoutManager;
-    //    public ArrayList<String> almacenId = new ArrayList<String>();
     public ArrayList<String> almacenNombres = new ArrayList<String>();
     public ArrayList<String> almacenAutor = new ArrayList<String>();
     public ArrayList<String> almacenImagenes = new ArrayList<String>();
@@ -58,7 +57,6 @@ public class Inicio extends AppCompatActivity {
     MiAdaptador pe;
     static public int pos;
 
-    //    static public View.OnClickListener listener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +96,6 @@ public class Inicio extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         btnRecarga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,24 +113,17 @@ public class Inicio extends AppCompatActivity {
         });
         queue = Volley.newRequestQueue(this);
         try {
-            obtenerDatosVolley();
-            Thread.sleep(3000);
+            obtenerInfo();
+            Thread.sleep(6000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-//        rv.stopScroll();
-
-
         rv = findViewById(R.id.recicler2);
         pe = new MiAdaptador(almacenGeneral, rv);
-
-
         miLayoutManager = new GridLayoutManager(this, 1);
         rv.setLayoutManager(miLayoutManager);
         rv.setAdapter(pe);
-
         rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,28 +131,22 @@ public class Inicio extends AppCompatActivity {
             }
         };
         pe.setOnClickListener(listener);
-
-
     }
 
-    private void obtenerDatosVolley() {
-//        String url = "http://fctulises.atwebpages.com/src/post.php?NombreR=a";
+     void obtenerInfo() {
         String url = "http://fctulises.atwebpages.com/src/post.php";
-
-
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-//                JSONArray mJsonArray = null;
                 try {
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject mJsonObject = response.getJSONObject(i);
                         String valor = mJsonObject.getString("Titulo");
-
                         String id = mJsonObject.getString("Identificador");
-                        String contador = mJsonObject.getString("Visualizaciones");
+                        String contador = mJsonObject.getString("Likes");
                         String autor = mJsonObject.getString("NombreR");
                         String foto = mJsonObject.getString("Imagen");
+
                         almacenIDD.add(id);
                         variables.almacenId.add(id);
                         almacenAutor.add(autor);
@@ -177,14 +161,12 @@ public class Inicio extends AppCompatActivity {
 
                     for (int j = 0; j < almacenImagenes.size(); j++) {
                         AsyncTask<String, Void, Bitmap> s = new AsyncFoto().execute(almacenImagenes.get(j));
-
                         try {
                             Bitmap fotoActual = s.get();
                             Thread.sleep(3000);
                             almacenImagenesConvertidas.add(fotoActual);
                             variables.almacenImagenesConvertidas2.add(fotoActual);
                             almacenGeneral.add(new ClasePrincipal(almacenIDD.get(j), almacenImagenesConvertidas.get(j), almacenNombres.get(j), almacenContadorVisitas.get(j), almacenAutor.get(j)));
-//                            String identificador,Bitmap imagen, String nombrePublicacion, String contadorVisitas
                         } catch (ExecutionException e) {
                             e.printStackTrace();
                         } catch (InterruptedException e) {
@@ -208,13 +190,10 @@ public class Inicio extends AppCompatActivity {
 
     private class AsyncFoto extends AsyncTask<String, Void, Bitmap> {
         Bitmap myBitmap;
-
         @Override
         protected Bitmap doInBackground(String... strings) {
             try {
-
                 URL url = new URL(strings[0]);
-
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setDoInput(true);
@@ -228,9 +207,7 @@ public class Inicio extends AppCompatActivity {
                 e.printStackTrace();
             }
             return myBitmap;
-
         }
-
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             Log.i(TAG, "a:   " + myBitmap);
@@ -239,8 +216,6 @@ public class Inicio extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
-
-
         View decorView = getWindow().getDecorView();
         int opciones = View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // Oculta la barra de navegación
@@ -249,8 +224,6 @@ public class Inicio extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(opciones);
-
         getSupportActionBar().hide();
-
     }
 }

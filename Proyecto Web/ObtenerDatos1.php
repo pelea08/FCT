@@ -21,7 +21,7 @@
 
                     $query2 = "update comentarios SET Texto=CONCAT(Texto,'\n $bla') where IdPublicacionRel= '$a'";
                     $updatee = mysqli_query($conexion, $query2);
-                } else {
+                } /* else {
 
                     $omitir = "SET FOREIGN_KEY_CHECKS=0";
                     mysqli_query($conexion, $omitir);
@@ -29,6 +29,6 @@
                     $query3 =  "INSERT INTO comentarios( Texto, IdPublicacionRel) VALUES ('$bla', '$a')";
 
                     $insertt = mysqli_query($conexion, $query3);
-                }
+                } */
             }
 ?>

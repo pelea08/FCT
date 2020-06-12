@@ -86,18 +86,9 @@ public class AnadirPublicacion extends AppCompatActivity {
         btnAñadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (titulo != null) {
-
                 titulo = tit.getText().toString();
                 Toast.makeText(AnadirPublicacion.this, "tit: " + titulo, Toast.LENGTH_SHORT).show();
-
                 ImageUploadToServerFunction();
-//                    new Añadir(AnadirPublicacion.this).execute(titulo, generoo, convertirImgString(bitmap));
-
-
-//                } else {
-//                    Toast.makeText(AnadirPublicacion.this, "Nombre o contraseña vacios inserte valores", Toast.LENGTH_SHORT).show();
-//                }
             }
         });
     }
@@ -151,78 +142,43 @@ public class AnadirPublicacion extends AppCompatActivity {
         AsyncTaskUploadClassOBJ.execute();
     }
 
-//    private String convertirImgString(Bitmap bitmap) {
-//
-//        ByteArrayOutputStream array = new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, array);
-//        byte[] imagenByte = array.toByteArray();
-//        String imagenString = Base64.encodeToString(imagenByte, Base64.DEFAULT);
-//
-//        return imagenString;
-//    }
-
     public class ImageProcessClass {
 
         public String ImageHttpRequest(String requestURL, HashMap<String, String> PData) {
 
             StringBuilder stringBuilder = new StringBuilder();
-
             try {
-
                 URL url;
                 HttpURLConnection httpURLConnectionObject;
                 OutputStream OutPutStream;
                 BufferedWriter bufferedWriterObject;
                 BufferedReader bufferedReaderObject;
                 int RC;
-
                 url = new URL(requestURL);
                 Log.i(TAG, "requestURL" + requestURL);
                 httpURLConnectionObject = (HttpURLConnection) url.openConnection();
-
                 httpURLConnectionObject.setReadTimeout(19000);
-
                 httpURLConnectionObject.setConnectTimeout(19000);
-
                 httpURLConnectionObject.setRequestMethod("POST");
-
                 httpURLConnectionObject.setDoInput(true);
-
                 httpURLConnectionObject.setDoOutput(true);
-
                 OutPutStream = httpURLConnectionObject.getOutputStream();
-
                 bufferedWriterObject = new BufferedWriter(
-
                         new OutputStreamWriter(OutPutStream, "UTF-8"));
-
                 bufferedWriterObject.write(bufferedWriterDataFN(PData));
-
                 bufferedWriterObject.flush();
-
                 bufferedWriterObject.close();
-
                 OutPutStream.close();
-
                 RC = httpURLConnectionObject.getResponseCode();
-
                 if (RC == HttpsURLConnection.HTTP_OK) {
-
                     bufferedReaderObject = new BufferedReader(new InputStreamReader(httpURLConnectionObject.getInputStream()));
-
                     stringBuilder = new StringBuilder();
-
                     String RC2;
-
                     while ((RC2 = bufferedReaderObject.readLine()) != null) {
-
                         stringBuilder.append(RC2);
                     }
                     Log.i(TAG, "stringBuilder" + stringBuilder);
-
                 }
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -230,60 +186,32 @@ public class AnadirPublicacion extends AppCompatActivity {
         }
 
         private String bufferedWriterDataFN(HashMap<String, String> HashMapParams) throws UnsupportedEncodingException {
-
             StringBuilder stringBuilderObject;
-
             stringBuilderObject = new StringBuilder();
-
             for (Map.Entry<String, String> KEY : HashMapParams.entrySet()) {
-
-                if (check)
-
+                if (check) {
                     check = false;
-                else
+
+                } else {
                     stringBuilderObject.append("&");
-
+                }
                 stringBuilderObject.append(URLEncoder.encode(KEY.getKey(), "UTF-8"));
-
                 stringBuilderObject.append("=");
-
                 stringBuilderObject.append(URLEncoder.encode(KEY.getValue(), "UTF-8"));
             }
             Log.i(TAG, "stringBuilderObject" + stringBuilderObject.toString());
-
             return stringBuilderObject.toString();
         }
-
-
     }
-
-//    public String getRealPathFromURI(Uri contentUri) {
-//        String[] proj = {MediaStore.Images.Media.DATA};
-//        Cursor cursor = managedQuery(contentUri, proj, null, null, null);
-//        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//        cursor.moveToFirst();
-//        return cursor.getString(column_index);
-//    }
 
     public void onClick(View view) {
         cargarFoto();
     }
 
     private void cargarFoto() {
-
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
-//        Intent intent = new Intent();
-//
-//        intent.setType("image/*");
-//
-//        intent.setAction(Intent.ACTION_GET_CONTENT);
-//
-//        startActivityForResult(Intent.createChooser(intent, "Select Image From Gallery"), 1);
-//        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//        intent.setType("image/");
-//        startActivityForResult(intent.createChooser(intent, "Selecione una app"), 10);
     }
 
     @Override
@@ -292,17 +220,14 @@ public class AnadirPublicacion extends AppCompatActivity {
         if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK && null != data) {
             uri = data.getData();
             if (android.os.Build.VERSION.SDK_INT >= 29) {
-                // To handle deprication use
                 ImageDecoder.Source source = ImageDecoder.createSource(this.getContentResolver(), uri);
                 try {
                     bitmap = ImageDecoder.decodeBitmap(source);
                     fotoSelecioanda.setImageBitmap(bitmap);
-
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             } else {
-                // Use older version
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                     fotoSelecioanda.setImageBitmap(bitmap);
@@ -310,23 +235,11 @@ public class AnadirPublicacion extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-
-
         }
     }
 
-//    public String getStringImage(Bitmap bmp) {
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-//        byte[] imageBytes = baos.toByteArray();
-//        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-//        return encodedImage;
-//    }
-
     protected void onResume() {
         super.onResume();
-
-
         View decorView = getWindow().getDecorView();
         int opciones = View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // Oculta la barra de navegación
@@ -335,12 +248,8 @@ public class AnadirPublicacion extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(opciones);
-
         getSupportActionBar().hide();
-
     }
-
-
 }
 
 
