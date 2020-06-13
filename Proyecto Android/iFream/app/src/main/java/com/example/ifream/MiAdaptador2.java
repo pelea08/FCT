@@ -42,7 +42,7 @@ public class MiAdaptador2 extends RecyclerView.Adapter<MiAdaptador2.Elemento> im
     public void onBindViewHolder(@NonNull MiAdaptador2.Elemento holder, int position) {
         ClasePrincipal pe = this.almacen.get(position);
         holder.nombrePubli2.setText(pe.getNombrePublicacion());
-        holder.contador.setText(pe.getContadorVisitas());
+        holder.contador.setText(pe.getLikes());
         holder.foto2.setImageBitmap(pe.getImagen());
     }
 

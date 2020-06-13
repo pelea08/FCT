@@ -27,6 +27,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class InicioSesion extends AppCompatActivity {
@@ -36,6 +37,8 @@ public class InicioSesion extends AppCompatActivity {
     boolean entrar;
     final String TAG = "MyActivity";
     public static String nombreS;
+    static public ArrayList<String> almacenIdRepeticion = new ArrayList<>();
+    static public ArrayList<String> almacenUsuarios = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,10 @@ public class InicioSesion extends AppCompatActivity {
                     if (entrar) {
                         Intent intent = new Intent(InicioSesion.this, Inicio.class);
                         startActivity(intent);
+                        //Cada vez que un usuario inicia sesion puede ir dar like a quin quiere
+                        //pero cada id sobre el like se registra para evitar repeticion
+                        almacenIdRepeticion = new ArrayList<>();
+
                     } else {
                         Toast.makeText(InicioSesion.this, "Datos Erroneos", Toast.LENGTH_SHORT).show();
                     }
@@ -129,10 +136,12 @@ public class InicioSesion extends AppCompatActivity {
             }
             return resultado;
         }
+
         public void onPostExecute(String resultado) {
             Log.i(TAG, "" + resultado);
         }
     }
+
     @Override
     protected void onResume() {
         super.onResume();

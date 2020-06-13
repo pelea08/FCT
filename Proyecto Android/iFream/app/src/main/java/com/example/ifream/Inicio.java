@@ -105,10 +105,12 @@ public class Inicio extends AppCompatActivity {
                             almacenGeneral.remove(i);
                             pe.notifyItemRemoved(i);
 
+
                         }
                     }
-
                 }
+
+
             }
         });
         queue = Volley.newRequestQueue(this);
@@ -133,7 +135,7 @@ public class Inicio extends AppCompatActivity {
         pe.setOnClickListener(listener);
     }
 
-     void obtenerInfo() {
+    void obtenerInfo() {
         String url = "http://fctulises.atwebpages.com/src/post.php";
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
@@ -190,6 +192,7 @@ public class Inicio extends AppCompatActivity {
 
     private class AsyncFoto extends AsyncTask<String, Void, Bitmap> {
         Bitmap myBitmap;
+
         @Override
         protected Bitmap doInBackground(String... strings) {
             try {
@@ -208,6 +211,7 @@ public class Inicio extends AppCompatActivity {
             }
             return myBitmap;
         }
+
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             Log.i(TAG, "a:   " + myBitmap);

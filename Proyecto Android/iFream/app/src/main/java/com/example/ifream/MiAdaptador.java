@@ -16,7 +16,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
+
+import static com.example.ifream.InicioSesion.almacenIdRepeticion;
+import static com.example.ifream.InicioSesion.almacenUsuarios;
+import static com.example.ifream.InicioSesion.nombreS;
 
 public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> implements View.OnClickListener {
     ArrayList<ClasePrincipal> almacen;
@@ -24,6 +30,8 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
     private View.OnClickListener listener;
     static public String posicionSelecionada;
     static Inicio a = new Inicio();
+
+    Map<String, String> almacenUsuId = new HashMap<String, String>();
 
     public MiAdaptador() {
     }
@@ -56,9 +64,11 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
         Context context;
         TextView nombrePubli;
         TextView autor;
+        TextView likes;
         ImageView foto;
         Button botonSeguir;
         Button botonComentar;
+        Button botonLike;
 
         public Elemento(@NonNull View itemView) {
             super(itemView);
@@ -66,8 +76,10 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
             this.nombrePubli = itemView.findViewById(R.id.nombrPublicacion);
             this.autor = itemView.findViewById(R.id.txtAutor);
             this.foto = itemView.findViewById(R.id.imageView);
+            this.likes = itemView.findViewById(R.id.txtLikes);
             botonSeguir = itemView.findViewById(R.id.btnSeguir);
             botonComentar = itemView.findViewById(R.id.btnComentarios);
+            botonLike = itemView.findViewById(R.id.btnLike);
         }
     }
 
@@ -77,6 +89,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
         holder.nombrePubli.setText(pe.getNombrePublicacion());
         holder.autor.setText(pe.getautor());
         holder.foto.setImageBitmap(pe.getImagen());
+        holder.likes.setText(pe.getLikes());
         holder.botonSeguir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +128,67 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                 Comentario c = new Comentario();
                 Inicio b = new Inicio();
                 c.id = b.almacenGeneral.get(position).getIdentificador();
+            }
+        });
+        holder.botonLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Inicio b = new Inicio();
+                String idPublicacion = b.almacenGeneral.get(position).getIdentificador();
+                String likesActuales = b.almacenGeneral.get(position).getLikes();
+                String nombreActual = nombreS;
+                if (!almacenUsuarios.contains(nombreActual)) {
+                    almacenUsuarios.add(nombreActual);
+                    //Evito que le pueda dar likes
+                    if (!almacenIdRepeticion.contains(idPublicacion)) {
+                        almacenIdRepeticion.add(idPublicacion);
+                        almacenUsuId.put(nombreActual, idPublicacion);
+                        int res=Integer.parseInt(likesActuales)  + 1;
+                        holder.likes.setText(res+"");
+
+                        AsyncTask<String, Void, String> prueba = new Like.darLike(holder.context).execute(idPublicacion);
+                        try {
+                            String aa = prueba.get();
+                            Thread.sleep(3 * 1000);
+                            if (aa.trim().equals("gg")) {
+                                Toast.makeText(holder.context, "Se supone que good", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(holder.context, "Error al dar like", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        Toast.makeText(holder.context, "No puedes dar like 2 veces", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+                    if (almacenUsuId.containsKey(nombreActual) && !almacenUsuId.containsValue(idPublicacion)) {
+                        almacenUsuId.put(nombreActual, idPublicacion);
+                        int res=Integer.parseInt(likesActuales)  + 1;
+                        holder.likes.setText(res+"");
+                        AsyncTask<String, Void, String> prueba = new Like.darLike(holder.context).execute(idPublicacion);
+                        try {
+                            String aa = prueba.get();
+                            Thread.sleep(3 * 1000);
+                            if (aa.trim().equals("gg")) {
+                                Toast.makeText(holder.context, "Se supone que good", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(holder.context, "Error al dar like", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        Toast.makeText(holder.context, "Ya le diste Like en su momento", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
             }
         });
     }

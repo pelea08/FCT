@@ -1,7 +1,6 @@
 package com.example.ifream;
 
 import android.graphics.Bitmap;
-import android.media.Image;
 
 public class ClasePrincipal {
 
@@ -9,7 +8,7 @@ public class ClasePrincipal {
     private Bitmap imagen;
     private String nombrePublicacion;
     private String autor;
-    private String contadorVisitas;
+    private String likes;
 
 //    public ClasePrincipal(String nombrePublicacion, Bitmap imagen, String autor) {
 //        this.imagen = imagen;
@@ -17,24 +16,24 @@ public class ClasePrincipal {
 //        this.autor = autor;
 //    }
 
-//    public ClasePrincipal(Bitmap imagen, String nombrePublicacion, String autor, String contadorVisitas) {
+//    public ClasePrincipal(Bitmap imagen, String nombrePublicacion, String autor, String likes) {
 //        this.imagen = imagen;
 //        this.nombrePublicacion = nombrePublicacion;
 //        this.autor = autor;
-//        this.contadorVisitas = contadorVisitas;
+//        this.likes = likes;
 //    }
 
-    public ClasePrincipal(String identificador,Bitmap imagen, String nombrePublicacion, String contadorVisitas ) {
+    public ClasePrincipal(String identificador,Bitmap imagen, String nombrePublicacion, String likes) {
         this.identificador = identificador;
         this.imagen = imagen;
         this.nombrePublicacion = nombrePublicacion;
-        this.contadorVisitas = contadorVisitas;
+        this.likes = likes;
     }
-    public ClasePrincipal(String identificador,Bitmap imagen, String nombrePublicacion, String contadorVisitas,String autor ) {
+    public ClasePrincipal(String identificador, Bitmap imagen, String nombrePublicacion, String likes, String autor ) {
         this.identificador = identificador;
         this.imagen = imagen;
         this.nombrePublicacion = nombrePublicacion;
-        this.contadorVisitas = contadorVisitas;
+        this.likes = likes;
         this.autor=autor;
     }
 
@@ -46,12 +45,12 @@ public class ClasePrincipal {
         this.identificador = identificador;
     }
 
-    public String getContadorVisitas() {
-        return contadorVisitas;
+    public String getLikes() {
+        return likes;
     }
 
-    public void setContadorVisitas(String contadorVisitas) {
-        this.contadorVisitas = contadorVisitas;
+    public void setLikes(String likes) {
+        this.likes = likes;
     }
 
     public Bitmap getImagen() {

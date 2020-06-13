@@ -169,6 +169,13 @@ relacioandas con el.
 Modificación anteproyecto,cambie lo de visualizaciones por Likes,cada publicación tendra de manera dinamica un boton para poder darle like en caso de que te guste y ese valor
 se volcara a una base de datos.
 
+13/06/2020-Dar funcionalidad al boton Like tanto en moviles como en web y implementarlo.
+Me esta dando problemas el tema de que si le das una vez no puedes dar like 30 veces mas.
+Intenter hacer como en SRV una especia de List<String,String> y asi jugamos con el contains y nos aseguramos pasansole nombre de usuario e id de la publicacion
+en este caso pasa a ser un  Map<String,String>.
+Visualizacion dinamica de likes de cada publicación apuntando a la base de datos.
+No fui capaz de de actualizar el numero de los likes pese a que en la base de datos me va bien,mañana intentare solucionarlo.
+
 
 
 
