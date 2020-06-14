@@ -176,6 +176,16 @@ en este caso pasa a ser un  Map<String,String>.
 Visualizacion dinamica de likes de cada publicación apuntando a la base de datos.
 No fui capaz de de actualizar el numero de los likes pese a que en la base de datos me va bien,mañana intentare solucionarlo.
 
+14/06/2020- Ya desisti y lo voy a dejar mas para delante porque lo gordo lo hace que es aumentar en +1 los likes en la base de datos sin repeticion, el problema 
+es que el contador no muestra la cifra que deberia porque no soy capaz de actualizarlo bien.(Incluso me planteo crear la entidad Like respecto al problema que tengo)
+Ahora voy añadir el tema del like en la Web.
+Consegui dar Like desde web el problema que tengo ahora es que un usuario X no de like 30 veces a la misma publicacion.
+Me pasa una cosa parecida que mediante codigo se me hace imposible controlar quien pincha y quien no,tengo pensando hacer una entidad lo que pasa que si me pongo ahora a hacerla voy a
+perder muchisimo tiempo y prefiero ponerme a pulir otras cosas.
+Estoy haciedno un acceso a mi perfil para la version web mostrar la informacion bien pero tan pronto accedes sin pulsar nada ya te lo borra y no entiendo porque pese a que lo tengo metido en una funcion.
+Porfin lo conseguin no es que fuera complicado si no el problema era como ejecutarlo.
+
+
 
 
 

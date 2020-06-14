@@ -194,6 +194,10 @@ if (!isset($usuario)) {
         #fname {
             text-align: center;
         }
+
+        #like {
+            background-color: #F0423A;
+        }
     </style>
     <title>iFream Registro</title>
 </head>
@@ -204,13 +208,14 @@ if (!isset($usuario)) {
             <!-- <h1>iFream</h1> -->
             <label class="navbar-brand" for="fname">Seguidores: <?php echo $contadorSeguidores['total']; ?> Publicaciónes: <?php echo $contadorPublicaciones['total']; ?>Seguidos: <?php echo $contadorSeguidos['total']; ?></label>
             <br>
-            <label class="navbar-brand" id="nombreUsuario"  for="fname">Nombre Usuario: <?php echo $usuario; ?> </label>
+            <label class="navbar-brand" id="nombreUsuario" for="fname">Nombre Usuario: <?php echo $usuario; ?> </label>
             <br>
             <a class="navbar-brand" href="http://fctulises.atwebpages.com/web/inicioUsuario.php"><input type="image" id="logout" alt="Login" src="http://fctulises.atwebpages.com/web/logo.png"></a>
             <div class="navbar-collapse collapse">
                 <button type="button" onclick="location.href='http://fctulises.atwebpages.com/web/añadirPublicacion.php'" id=pep class="btn btn-default navbar-btn">Compartir Publicación</button>
                 <button type="button" onclick="location.href='http://fctulises.atwebpages.com/web/borrarPublicacion.php'" id=pepe class="btn btn-default navbar-btn">Borrar Publicación</button>
                 <button type="button" onclick="location.href='http://fctulises.atwebpages.com/web/inicioUsuario.php'" id=pepe class="btn btn-default navbar-btn">Recargar Web</button>
+                <button type="button" onclick="location.href='http://fctulises.atwebpages.com/web/perfil.php'" id=pepe class="btn btn-default navbar-btn">Mi Perfil</button>
                 <ul class="nav navbar-nav navbar-right">
                     <li><button onclick="location.href='logout.php'" type="button"> <input type="image" id="logout" alt="Login" src="http://fctulises.atwebpages.com/web/logout.png"></button></li>
                 </ul>
@@ -249,7 +254,6 @@ if (!isset($usuario)) {
                         <div id="fname">
                             <input type="text" id="faname" name="fname" value=""><br><br>
                             <button type="button" id="btnSave" onclick="com()">Añadir comentario</button>
-
                         </div>
                         <br>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -282,6 +286,62 @@ if (!isset($usuario)) {
                 $('#conte-modal1').load('ObtenerDatos1.php?my_modal=' + bla + '&a=' + a, function() {
 
                 });
+            }
+        }
+    </script>
+    <script>
+        function like() {
+
+            var botones1 = document.getElementsByClassName('btn btn-default navbar-btn');
+
+            for (var i = 0; i < botones1.length; i++) {
+                botones1[i].addEventListener("click", capturar1);
+            }
+
+            console.log("e");
+            function capturar1() {
+                console.log(this.value);
+
+     
+                var resIDD = this.value;
+                //Es una manera de pasar la variable
+                /* var usu=$usuario; */
+                /* window.location.href = window.location.href + "?resIDD=" + resIDD + "&a=" + usu; */
+                window.location.href = window.location.href + "?resIDD=" + resIDD ;
+                <?php
+
+                $servidor = "fdb26.awardspace.net";
+                $nombreusuario = "3443139_pruebas";
+                $password = "abc123.@";
+                $db = "3443139_pruebas";
+                $conexion = mysqli_connect($servidor, $nombreusuario, $password, $db);
+
+                if ($conexion->connect_error) {
+                    die("Conexión fallida: " . $conexion->connect_error);
+                } else {
+                    $var_PHP = $_GET["resIDD"];
+                    $usuarioo = $_GET["a"];
+                /*     $suma1 = $var_PHP + "" + $usuarioo;
+                    $array = new ArrayObject();
+                    $verificar = false; */
+                    //Si array con nombre+id igual a alguno de aqui pirate
+
+                 /*    for ($i = 0; $i < sizeof($array); $i++) {
+                        if ($array[$i] == $suma1) {
+                            $verificar = false;
+                            break;
+                        } else {
+                            $verificar = true;
+                        }
+                    }
+                    if ($verificar) { */
+                        $query2 = "UPDATE `publicaciones` SET `Likes`=Likes+1 WHERE Identificador='$var_PHP'";
+                        mysqli_query($conexion, $query2);
+                        /* $suma = $var_PHP + "" + $usuario;
+                        array_push($array, $suma); */
+                    /* } */
+                }
+                ?>
             }
         }
     </script>
@@ -382,6 +442,7 @@ if (!isset($usuario)) {
                                     '</div>' +
                                     '<button type="button" id="comentarios" class="btn btn-default navbar-btn" value=' + dataArray[i].Identificador + ' data-toggle="modal" data-target="#miModal" onclick="ventanaModal(' + dataArray[i].Identificador + ')">Comentarios</button>' +
                                     ' <button type="button" id="seguir" class="btn btn-default navbar-btn" value=' + dataArray[i].Identificador + '  onclick="seguir()" >Seguir</button>' +
+                                    ' <button type="button" id="like" class="btn btn-default navbar-btn" value=' + dataArray[i].Identificador + '  onclick="like()" >Like</button>' +
                                     '</div> ';
 
                             }
@@ -412,6 +473,7 @@ if (!isset($usuario)) {
                         '</div>' +
                         '<button type="button" id="comentarios" class="btn btn-default navbar-btn" value=' + dataArray[i].Identificador + ' data-toggle="modal" data-target="#miModal" onclick="ventanaModal(' + dataArray[i].Identificador + ')">Comentarios</button>' +
                         ' <button type="button" id="seguir" class="btn btn-default navbar-btn" value=' + dataArray[i].Identificador + ' onclick="seguir()" >Seguir</button>' +
+                        ' <button type="button" id="like" class="btn btn-default navbar-btn" value=' + dataArray[i].Identificador + '  onclick="like()" >Like</button>' +
                         '</div> ';
                 }
             }

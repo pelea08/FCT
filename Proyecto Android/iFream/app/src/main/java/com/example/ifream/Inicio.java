@@ -116,7 +116,7 @@ public class Inicio extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
         try {
             obtenerInfo();
-            Thread.sleep(6000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
