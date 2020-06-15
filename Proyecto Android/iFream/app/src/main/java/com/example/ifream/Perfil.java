@@ -57,14 +57,10 @@ public class Perfil extends AppCompatActivity {
 
         nombre.setText(s.nombreS);
         queue = Volley.newRequestQueue(this);
-        try {
-            obtenerNumeroPublis();
-            obtenerSeguidores();
-            obtenerSeguidos();
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        obtenerNumeroPublis();
+        obtenerSeguidores();
+        obtenerSeguidos();
+//
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

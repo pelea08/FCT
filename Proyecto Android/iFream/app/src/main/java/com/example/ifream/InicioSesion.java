@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -44,21 +45,28 @@ public class InicioSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
+         final CargandoDialog cargandoDialog = new CargandoDialog(InicioSesion.this);
+
         btnInicio = findViewById(R.id.btnInicioSesion1);
         usuario = findViewById(R.id.editTextNo);
         contraseña = findViewById(R.id.editTextContr);
         btnInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cargandoDialog.empezarCarga();
+
                 //Ocultar teclado si no en determinadas dimensiones no se va a ver bien
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(contraseña.getWindowToken(), 0);
                 nombreS = usuario.getText().toString();
                 String contraseñaC = contraseña.getText().toString();
+
                 AsyncTask<String, Void, String> des = new Logeo(getApplicationContext()).execute(nombreS, contraseñaC);
                 try {
                     String aa = des.get();
-                    Thread.sleep(3 * 1000);
+//
+//                    Thread.sleep(3 * 1000);
+//                    cargandoDialog.empezarCarga();
                     //CODIGO QUE DEVUELVE CUANDO EL LOGEO ES EXITOSO
                     if (aa.trim().equals("asdasdasdasdas")) {
                         entrar = true;
@@ -68,12 +76,26 @@ public class InicioSesion extends AppCompatActivity {
                     if (entrar) {
                         Intent intent = new Intent(InicioSesion.this, Inicio.class);
                         startActivity(intent);
+//                        cargandoDialog.destruitDialog();
+
                         //Cada vez que un usuario inicia sesion puede ir dar like a quin quiere
                         //pero cada id sobre el like se registra para evitar repeticion
                         almacenIdRepeticion = new ArrayList<>();
-
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                cargandoDialog.destruitDialog();
+                            }
+                        }, 2000);
                     } else {
-                        Toast.makeText(InicioSesion.this, "Datos Erroneos", Toast.LENGTH_SHORT).show();
+                        //Si es incorrecto sigue con la animacion y pasados 2 segundos cierralo
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                Toast.makeText(InicioSesion.this, "Datos Erroneos", Toast.LENGTH_SHORT).show();
+                                cargandoDialog.destruitDialog();
+                            }
+                        }, 2000);
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

@@ -102,22 +102,26 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                 String autorPublicacion = b.almacenGeneral.get(position).getautor();
                 posicionSelecionada = b.almacenGeneral.get(position).getIdentificador();
                 Toast.makeText(holder.context, "Esta es la pos que pulse: " + autorPublicacion, Toast.LENGTH_SHORT).show();
-                Seguir s = new Seguir();
-                AsyncTask<String, Void, String> des = new Seguir.seguirr(holder.context).execute(autorPublicacion, usuarioActual);
-                try {
-                    String aa = des.get();
-                    Thread.sleep(3 * 1000);
-                    //CODIGO QUE DEVUELVE CUANDO EL LOGEO ES EXITOSO
-                    if (aa.trim().equals("asdasdasdasdas")) {
-                        Toast.makeText(holder.context, "Se supone que good", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(holder.context, "La relaccion ya existe", Toast.LENGTH_SHORT).show();
+                if(!autorPublicacion.equals(usuarioActual) ){
+                    AsyncTask<String, Void, String> des = new Seguir.seguirr(holder.context).execute(autorPublicacion, usuarioActual);
+                    try {
+                        String aa = des.get();
+                        Thread.sleep(3 * 1000);
+                        //CODIGO QUE DEVUELVE CUANDO EL LOGEO ES EXITOSO
+                        if (aa.trim().equals("asdasdasdasdas")) {
+                            Toast.makeText(holder.context, "Se supone que good", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(holder.context, "La relaccion ya existe", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                }else{
+                    Toast.makeText(holder.context, "No te puedes seguir a ti mismo", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
         holder.botonComentar.setOnClickListener(new View.OnClickListener() {

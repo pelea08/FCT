@@ -9,6 +9,7 @@ import android.graphics.ImageDecoder;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -57,7 +58,7 @@ public class AnadirPublicacion extends AppCompatActivity {
     String NombreR = "NombreR";
     String titulo;
     public static int RESULT_LOAD_IMG = 1;
-
+    final CargandoDialog cargandoDialog = new CargandoDialog(AnadirPublicacion.this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,9 +87,16 @@ public class AnadirPublicacion extends AppCompatActivity {
         btnAñadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cargandoDialog.empezarCarga();
                 titulo = tit.getText().toString();
                 Toast.makeText(AnadirPublicacion.this, "tit: " + titulo, Toast.LENGTH_SHORT).show();
                 ImageUploadToServerFunction();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        cargandoDialog.destruitDialog();
+                    }
+                }, 2000);
             }
         });
     }

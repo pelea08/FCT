@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -56,9 +57,12 @@ public class Inicio extends AppCompatActivity {
     FloatingActionButton btnPerf;
     MiAdaptador pe;
     static public int pos;
+    CargandoDialog cargandoDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        cargandoDialog = new CargandoDialog(Inicio.this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
         contextInicio = getApplicationContext();
@@ -97,6 +101,7 @@ public class Inicio extends AppCompatActivity {
             }
         });
         btnRecarga.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if (variables.posicionPasar != "") {
@@ -104,22 +109,20 @@ public class Inicio extends AppCompatActivity {
                         if (almacenGeneral.get(i).getIdentificador() == variables.posicionPasar) {
                             almacenGeneral.remove(i);
                             pe.notifyItemRemoved(i);
-
-
                         }
                     }
                 }
-
-
             }
         });
         queue = Volley.newRequestQueue(this);
-        try {
-            obtenerInfo();
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        obtenerInfo();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                cargandoDialog.destruitDialog();
+            }
+        }, 1000);
         rv = findViewById(R.id.recicler2);
         pe = new MiAdaptador(almacenGeneral, rv);
         miLayoutManager = new GridLayoutManager(this, 1);
@@ -136,6 +139,8 @@ public class Inicio extends AppCompatActivity {
     }
 
     void obtenerInfo() {
+        cargandoDialog.empezarCarga();
+
         String url = "http://fctulises.atwebpages.com/src/post.php";
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
