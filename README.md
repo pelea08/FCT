@@ -185,15 +185,17 @@ perder muchisimo tiempo y prefiero ponerme a pulir otras cosas.
 Estoy haciedno un acceso a mi perfil para la version web mostrar la informacion bien pero tan pronto accedes sin pulsar nada ya te lo borra y no entiendo porque pese a que lo tengo metido en una funcion.
 Porfin lo conseguin no es que fuera complicado si no el problema era como ejecutarlo.
 
-15/05/2020- Actualización anteproyecto.
+15/06/2020- Actualización anteproyecto.
 Revise una cosa y ayer resulta que deje un fallo que solo me borraba el usuario y no las publicaciones y seguidores relacionados.
 Aprendiedno a hacer animacion de cargando en Android debido a que hay determinadas partes que tardan(porque tiene que tardar para hacer la carga de datos bien)en cargar 
 y poderia generar confusion al usuario.
-No estoy siendo capaz de hacer la animación me esta dando muchos problemas,vale lo consegui y me quedo bastante guay el tema de la carga hasta cuadno me carga la primera pantalla y justo
-se quita en el momento adecuado.
+No estoy siendo capaz de hacer la animación me esta dando muchos problemas mañana continuo y si no pedire ayuda a Javi.
 
 
-
+16/06/2020-Lo consegui y me quedo bastante guay el tema de la carga hasta cuando me carga la primera pantalla y justo se quita en el momento adecuado y al añadir publicación tambien.
+Solucione unos pequeños problemas de los comentarios.
+Diseñando  y relacionando las pantallas del anteproyecto para móvil y tambien haciendolo para web.
+Hice algunos apartados del pdf y otros los dejo mas para delante porque me gustaria terminar algunas cosas.
 
 
 

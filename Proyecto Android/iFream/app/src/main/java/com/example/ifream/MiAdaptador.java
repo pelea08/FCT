@@ -106,10 +106,10 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                     AsyncTask<String, Void, String> des = new Seguir.seguirr(holder.context).execute(autorPublicacion, usuarioActual);
                     try {
                         String aa = des.get();
-                        Thread.sleep(3 * 1000);
                         //CODIGO QUE DEVUELVE CUANDO EL LOGEO ES EXITOSO
                         if (aa.trim().equals("asdasdasdasdas")) {
                             Toast.makeText(holder.context, "Se supone que good", Toast.LENGTH_SHORT).show();
+
                         } else {
                             Toast.makeText(holder.context, "La relaccion ya existe", Toast.LENGTH_SHORT).show();
                         }
@@ -153,7 +153,6 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                         AsyncTask<String, Void, String> prueba = new Like.darLike(holder.context).execute(idPublicacion);
                         try {
                             String aa = prueba.get();
-                            Thread.sleep(3 * 1000);
                             if (aa.trim().equals("gg")) {
                                 Toast.makeText(holder.context, "Se supone que good", Toast.LENGTH_SHORT).show();
                             } else {
@@ -176,7 +175,6 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                         AsyncTask<String, Void, String> prueba = new Like.darLike(holder.context).execute(idPublicacion);
                         try {
                             String aa = prueba.get();
-                            Thread.sleep(3 * 1000);
                             if (aa.trim().equals("gg")) {
                                 Toast.makeText(holder.context, "Se supone que good", Toast.LENGTH_SHORT).show();
                             } else {

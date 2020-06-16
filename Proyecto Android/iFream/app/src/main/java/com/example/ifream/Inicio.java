@@ -89,7 +89,7 @@ public class Inicio extends AppCompatActivity {
         logOutFl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Inicio.this, MainActivity.class);
+                Intent intent = new Intent(Inicio.this, InicioSesion.class);
                 startActivity(intent);
             }
         });
@@ -123,6 +123,7 @@ public class Inicio extends AppCompatActivity {
                 cargandoDialog.destruitDialog();
             }
         }, 1000);
+
         rv = findViewById(R.id.recicler2);
         pe = new MiAdaptador(almacenGeneral, rv);
         miLayoutManager = new GridLayoutManager(this, 1);
