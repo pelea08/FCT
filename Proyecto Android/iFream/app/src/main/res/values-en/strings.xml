@@ -6,4 +6,17 @@
     <string name="titulo">iFream</string>
     <string name="nombreusuario">Username</string>
     <string name="pass">Password</string>
+    <string name="NombreUsuario">User Name:</string>
+    <string name="publis">Posts:</string>
+    <string name="segui">Followers:</string>
+    <string name="Siguie">Following:</string>
+    <string name="cerrarsesion">Logout</string>
+    <string name="eliminarYCerrar">Delete Profile and Logout</string>
+    <string name="fechanacimi">Birth Day</string>
+    <string name="cargando">Loading...</string>
+    <string name="lik" translatable="false">Like</string>
+    <string name="seguir">Follow</string>
+    <string name="comentarios">Comments</string>
+    <string name="autor">Author</string>
+    <string name="likes">Likes:</string>
 </resources>

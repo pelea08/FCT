@@ -20,4 +20,17 @@
         <item>Comida</item>
         <item>Deportes</item>
     </string-array>
+    <string name="NombreUsuario">Nombre Usuario:</string>
+    <string name="publis">Publicaciónes:</string>
+    <string name="segui">Seguidores:</string>
+    <string name="Siguie">Siguiendo:</string>
+    <string name="cerrarsesion">Cerrar Sesión</string>
+    <string name="eliminarYCerrar">Eliminar Perfil Y Cerrar Sesión</string>
+    <string name="fechanacimi">Fecha Nacimiento</string>
+    <string name="cargando">Cargando...</string>
+    <string name="lik">Like</string>
+    <string name="seguir">Seguir</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="autor">Autor:</string>
+    <string name="likes">Likes:</string>
 </resources>

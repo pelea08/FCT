@@ -197,6 +197,11 @@ Solucione unos pequeños problemas de los comentarios.
 Diseñando  y relacionando las pantallas del anteproyecto para móvil y tambien haciendolo para web.
 Hice algunos apartados del pdf y otros los dejo mas para delante porque me gustaria terminar algunas cosas.
 
+17/06/2020- Pasar toda la app android a ingles y español, cuando el movil del usuario esta en español automaticamente se pone toda la app en español 
+en cambio cuando esta en ingles se pone en ingles toda la app.
+Intente meterme con el tema de los likes a dejarlo "perfecto" pero nada. Mañana intentare otra vez el tema likes y también revisar el pequeño fallo de los comentarios y entregare todo.
+
+
 
 
 
