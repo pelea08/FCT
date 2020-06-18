@@ -1,7 +1,6 @@
 <?php
 class DBController
 {
-   
     private $host = "fdb26.awardspace.net";
 
     private $user = "3443139_pruebas";

@@ -219,20 +219,17 @@ if (!isset($usuario)) {
                 <ul class="nav navbar-nav navbar-right">
                     <li><button onclick="location.href='logout.php'" type="button"> <input type="image" id="logout" alt="Login" src="http://fctulises.atwebpages.com/web/logout.png"></button></li>
                 </ul>
-
             </div>
         </nav>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-center mb-5" id="categoria">
-
             <button type="button" class="btn btn-outline-black waves-effect filter" onclick="location.reload()">Todo</button>
             <button type="button" class="btn btn-outline-black waves-effect filter" value="Automoviles" id="Automoviles" onclick="myFunction()">Automóviles</button>
             <button type="button" class="btn btn-outline-black waves-effect filter" value="Tecnologia" id="Tecnologia" onclick="myFunction()">Tecnología</button>
             <button type="button" class="btn btn-outline-black waves-effect filter" value="Moda" id="Moda" onclick="myFunction()">Moda</button>
             <button type="button" class="btn btn-outline-black waves-effect filter" value="Comida" id="Comida" onclick="myFunction()">Comida</button>
             <button type="button" class="btn btn-outline-black waves-effect filter" value="Deporte" id="Deporte" onclick="myFunction()">Deportes</button>
-
         </div>
         <br><br><br><br><br>
 
@@ -260,14 +257,10 @@ if (!isset($usuario)) {
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
     <script>
         function com() {
-
             var botones1 = document.getElementsByClassName('btn btn-default navbar-btn');
 
             for (var i = 0; i < botones1.length; i++) {
@@ -275,17 +268,11 @@ if (!isset($usuario)) {
             }
 
             function capturar2() {
-
                 var bla = $('#faname').val().toString();
-                //Me esta cogiendo la primera vuelta
-                //Cuestion me tiene que detectar 
-                /* var a = document.getElementById("comentarios").value; */
                 var a = this.value;
                 console.log(a + "");
                 console.log(bla + "");
-                $('#conte-modal1').load('ObtenerDatos1.php?my_modal=' + bla + '&a=' + a, function() {
-
-                });
+                $('#conte-modal1').load('ObtenerDatos1.php?my_modal=' + bla + '&a=' + a, function() {});
             }
         }
     </script>
@@ -299,15 +286,11 @@ if (!isset($usuario)) {
             }
 
             console.log("e");
+
             function capturar1() {
                 console.log(this.value);
-
-     
                 var resIDD = this.value;
-                //Es una manera de pasar la variable
-                /* var usu=$usuario; */
-                /* window.location.href = window.location.href + "?resIDD=" + resIDD + "&a=" + usu; */
-                window.location.href = window.location.href + "?resIDD=" + resIDD ;
+                window.location.href = window.location.href + "?resIDD=" + resIDD;
                 <?php
 
                 $servidor = "fdb26.awardspace.net";
@@ -321,25 +304,9 @@ if (!isset($usuario)) {
                 } else {
                     $var_PHP = $_GET["resIDD"];
                     $usuarioo = $_GET["a"];
-                /*     $suma1 = $var_PHP + "" + $usuarioo;
-                    $array = new ArrayObject();
-                    $verificar = false; */
-                    //Si array con nombre+id igual a alguno de aqui pirate
-
-                 /*    for ($i = 0; $i < sizeof($array); $i++) {
-                        if ($array[$i] == $suma1) {
-                            $verificar = false;
-                            break;
-                        } else {
-                            $verificar = true;
-                        }
-                    }
-                    if ($verificar) { */
-                        $query2 = "UPDATE `publicaciones` SET `Likes`=Likes+1 WHERE Identificador='$var_PHP'";
-                        mysqli_query($conexion, $query2);
-                        /* $suma = $var_PHP + "" + $usuario;
-                        array_push($array, $suma); */
-                    /* } */
+                    $query2 = "UPDATE `publicaciones` SET `Likes`=Likes+1 WHERE Identificador='$var_PHP'";
+                    mysqli_query($conexion, $query2);
+                   
                 }
                 ?>
             }
@@ -353,15 +320,9 @@ if (!isset($usuario)) {
             for (var i = 0; i < botones1.length; i++) {
                 botones1[i].addEventListener("click", capturar1);
             }
-
-
             function capturar1() {
                 console.log(this.value);
-
-                /* var resIDD = this.id.toString(); */
-                /* $res1 = this.id.toString(); */
                 var resIDD = this.value;
-                //Es una manera de pasar la variable
                 window.location.href = window.location.href + "?resIDD=" + resIDD;
                 <?php
 
@@ -381,12 +342,9 @@ if (!isset($usuario)) {
 
                     if ($autorPublicacion1) {
                         $autorPublicacion2 = mysqli_fetch_array($autorPublicacion1);
-
-                        //Para que no se pueda seguir a si mismo
                         if ($autorPublicacion2[0] != $usuario) {
                             $query3 = "INSERT INTO `sigue`(`nombreSeguido`, `nombreSeguidor`) VALUES ('$autorPublicacion2[0]','$usuario')";
                             mysqli_query($conexion, $query3);
-                            /* header("Location: inicioUsuario.php"); */
                         }
                     }
                 }

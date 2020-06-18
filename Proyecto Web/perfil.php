@@ -72,8 +72,6 @@ if (!isset($usuario)) {
                         </div>
                     </div>
                 </div>
-
-
                 <div class="form-group">
                     <label class="col-md-4 control-label">Publicaciónes</label>
                     <div class="col-md-4 selectContainer">
@@ -82,7 +80,6 @@ if (!isset($usuario)) {
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label class="col-md-4 control-label">Seguidores</label>
                     <div class="col-md-4 selectContainer">
@@ -91,7 +88,6 @@ if (!isset($usuario)) {
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label class="col-md-4 control-label">Seguidos</label>
                     <div class="col-md-4 selectContainer">
@@ -100,18 +96,12 @@ if (!isset($usuario)) {
                         </div>
                     </div>
                 </div>
-
-
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4"><br>
-
-                        <!-- Esto lo puse asi para que me quedara bien el diseño -->
-                        <!-- &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" onclick="borrar()" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEliminar Cuenta Y Cerrar Sesión <span class="glyphicon glyphicon-trash"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button> -->
                         <input type="submit" name="test" id="test" class="btn btn-warning" value="Eliminar Cuenta Y Cerrar Sesión"></input>
                     </div>
                 </div>
-
             </fieldset>
         </form>
     </div>
@@ -145,16 +135,13 @@ if (!isset($usuario)) {
             mysqli_query($conexion, $query4);
         }
     }
+    //Si el ID es test y envia post  ejecuta a y luego mandame al logout
     if (array_key_exists('test', $_POST)) {
         a();
         //Tarda 2 segundos y redirecionan al loguin y rompe la sesion
         echo '<meta http-equiv="Refresh" content="2;url=http://fctulises.atwebpages.com/web/logout.php">';
     }
     ?>
-    <script>
-
-    </script>
-
 </body>
 </head>
 

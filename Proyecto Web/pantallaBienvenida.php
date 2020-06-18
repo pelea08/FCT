@@ -44,11 +44,12 @@
             font-family: 'Pacifico', cursive;
 
         }
-       #iniciarSesion{
-        width: 300px;
-        background-color:rgb(255, 235, 59);
-        color: #2196F3;
-       }
+
+        #iniciarSesion {
+            width: 300px;
+            background-color: rgb(255, 235, 59);
+            color: #2196F3;
+        }
     </style>
     <title>iFream Registro</title>
 </head>
@@ -62,14 +63,13 @@
                     <img id="imagen" src="https://i.ibb.co/nmQN2BH/pruebas.png">
                 </div>
                 <div class="form-group">
-                    
                     <br>
                     <a href="http://fctulises.atwebpages.com/web/login.php" id="iniciarSesion" class="btn btn-default">Iniciar Sesión</a>
                 </div>
-                <a href="http://fctulises.atwebpages.com/web/registro.php"id="iniciarSesion" class="btn btn-default" >Registrarse</a>
+                <a href="http://fctulises.atwebpages.com/web/registro.php" id="iniciarSesion" class="btn btn-default">Registrarse</a>
             </fieldset>
         </form>
-       
+
     </div>
 </body>
 

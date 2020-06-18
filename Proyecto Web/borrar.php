@@ -3,7 +3,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-2.0.3.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <style type="text/css">
         #regiration_form fieldset:not(:first-of-type) {
@@ -167,8 +166,6 @@
                 <button type="button" id="comentarios" class="btn btn-default navbar-btn">Comentarios</button>
                 <button type="button" id="seguir" class="btn btn-default navbar-btn">Seguir</button>
             </div>
-
-
             <div class="col-sm-4">
                 <div class="imagebox">
                     <a href=https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/5e6fa1fd5bafe844fb2c00cd/dinosaurios-famosos_1.jpg id="pop">
@@ -201,8 +198,6 @@
             </div>
         </TR>
     </table>
-
-
 </body>
 
 </html>

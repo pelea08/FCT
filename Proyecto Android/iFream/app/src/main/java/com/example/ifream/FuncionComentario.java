@@ -23,8 +23,6 @@ import java.nio.charset.StandardCharsets;
 
 public class FuncionComentario {
 
-    EditText texto;
-
     public static class Comentario extends AsyncTask<String, Void, String> {
 
         private WeakReference<Context> context;
@@ -76,8 +74,8 @@ public class FuncionComentario {
             }
             return resultado;
         }
+
         public void onPostExecute(String resultado) {
-//            Log.i(TAG, "" + resultado);
         }
     }
 }

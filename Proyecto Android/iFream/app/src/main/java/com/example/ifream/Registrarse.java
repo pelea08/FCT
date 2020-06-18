@@ -42,7 +42,6 @@ public class Registrarse extends AppCompatActivity {
     Calendar c;
     DatePickerDialog d;
     boolean banderaFecha = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +107,6 @@ public class Registrarse extends AppCompatActivity {
             }
         });
     }
-
     public static class Registro extends AsyncTask<String, Void, String> {
 
         private WeakReference<Context> context;

@@ -56,12 +56,10 @@
                     <img id="imagen" src="https://i.ibb.co/nmQN2BH/pruebas.png">
                 </div>
                 <div class="form-group">
-                    <!-- <label for="fUsuario">Usuario</label> -->
                     <br>
                     <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" maxlength="10">
                 </div>
                 <div class="form-group">
-                    <!-- <label for="exampleInputPassword1">Contraseña</label> -->
                     <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" maxlength="16">
                 </div>
                 <div class="form-group">

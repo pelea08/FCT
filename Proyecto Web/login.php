@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,18 +56,15 @@
                     <img id="imagen" src="https://i.ibb.co/nmQN2BH/pruebas.png">
                 </div>
                 <div class="form-group">
-
                     <br>
                     <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" maxlength="10">
                 </div>
                 <div class="form-group">
-
                     <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" maxlength="16">
                 </div>
                 <input type="submit" class="submit btn btn-success" value="Iniciar Sesión" />
             </fieldset>
         </form>
-       
     </div>
 </body>
 

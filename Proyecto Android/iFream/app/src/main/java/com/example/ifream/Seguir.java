@@ -23,9 +23,6 @@ public class Seguir {
     public Context context;
 
     private static final String TAG = "my";
-
-    //Parametro 1=nombre Seguido
-//Parametro 2=nombre Seguidor
     public static class seguirr extends AsyncTask<String, Void, String> {
 
         private WeakReference<Context> context;

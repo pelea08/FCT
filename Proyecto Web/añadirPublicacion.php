@@ -97,7 +97,6 @@ window.location.replace('http://www.ejemplo.es');
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4"><br>
-
                         <!-- Esto lo puse asi para que me quedara bien el diseño -->
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPublicar <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
                     </div>
@@ -121,22 +120,6 @@ window.location.replace('http://www.ejemplo.es');
         if ((isset($_POST['titulo']) && !empty($_POST['titulo']))
             && (isset($_POST['categoria']) && !empty($_POST['categoria']))
         ) {
-            /* $errors = array();
-            $file_name = $_FILES['image']['name'];
-            $file_size = $_FILES['image']['size'];
-            $file_type = $_FILES['image']['type'];
-            $file_ext = strtolower(end(explode('.', $_FILES['image']['name']))); */
-
-            /* $extensions = array("jpeg", "jpg", "png"); */
-
-            /*  if (in_array($file_ext, $extensions) === false) {
-                $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
-            } */
-
-            /*  if ($file_size > 2097152666655) {
-                $errors[] = 'File size must be excately 2 MB';
-            } */
-
             session_start();
             $usuario = $_SESSION['username'];
 

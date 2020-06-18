@@ -1,5 +1,4 @@
 <?php
-
 $servidor = "fdb26.awardspace.net";
 $nombreusuario = "3443139_pruebas";
 $password = "abc123.@";
@@ -14,18 +13,10 @@ if ($conexion->connect_error) {
     $result = mysqli_query($conexion, $query);
     if (!empty($result)) {
         $res = mysqli_fetch_array($result);
-
-
-
 ?>
-
-
         <!-- Mostrando la descripción de la base de datos-->
-
         <div class='modal-text'><?php echo $res[0] ?></div>
-
 <?php
-
     } /*  <div class='modal-text'><?php echo $result[0]["comentarios"] ?></div> */
 }
 ?>

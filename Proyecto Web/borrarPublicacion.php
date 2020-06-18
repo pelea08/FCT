@@ -150,6 +150,7 @@ if (!isset($usuario)) {
             display: block;
             text-align: center;
         }
+
         #barraGrande {
             margin: inherit;
         }
@@ -163,7 +164,7 @@ if (!isset($usuario)) {
 <body>
 
     <div class="centrador">
-        <nav  class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-brand" id="logout">
                 <label>Introduzca ID</label><br>
                 <input type="text" id="fname" name="fname"><br>
@@ -173,16 +174,12 @@ if (!isset($usuario)) {
                 <button type="button" onclick="location.href='http://fctulises.atwebpages.com/web/inicioUsuario.php'" id=pep class="btn btn-default navbar-btn">Atras</button>
                 <ul class="nav navbar-nav navbar-right">
                     <li><button onclick="location.href='logout.php'" type="button"> <input type="image" src="http://fctulises.atwebpages.com/web/logout.png"></button></li>
-
                 </ul>
-
             </div>
         </nav>
     </div>
     <br>
-
     <div class="row">
-
         <div class="container" id="displayData">
         </div>
 
@@ -199,7 +196,6 @@ if (!isset($usuario)) {
                             ' <div class="imagebox">' +
                             '<img src=' + dataArray[i].Imagen + ' class="category-banner img-responsive" id="foto"  >' +
                             '<span class="imagebox-desc">' + "" + dataArray[i].Titulo + "<br> ID:" + dataArray[i].Identificador + '</span>' +
-                            /* '<span class="imagebox-desc">' + "IDENTIFICADOR:"+dataArray[i].Identificador + '</span>' + */
                             '</a>' +
                             '</div>' +
                             '</div> ';
@@ -224,38 +220,16 @@ if (!isset($usuario)) {
                         var displayData = "";
                         for (i in dataArray) {
                             if (dataArray[i].NombreR == "<?php echo $usuario; ?>") {
-                                /* almacenIdentificadores += dataArray[i].Identificador; */
                                 almacenIdentificadores += dataArray[i].Identificador;
-                                /* displayData += ' <div class="col-sm-4">' +
-                                    ' <div class="imagebox">' +
-                                    '<img src=' + dataArray[i].Imagen + ' class="category-banner img-responsive" id="foto">' +
-                                    '<span class="imagebox-desc">' + dataArray[i].Titulo + '</span>' +
-                                    '</a>' +
-                                    '</div>' +
-                                    '</div> '; */
                             }
-
                         }
                     }
-                    /* document.getElementById("displayData").innerHTML = displayData; */
                 };
-                /* alert('http://fctulises.atwebpages.com/src/post.php?NombreR=' + "<?php echo $usuario; ?>" + "&Identificador=" + almacenIdentificadores[numero]); */
                 xmlhttp.open("DELETE", 'http://fctulises.atwebpages.com/src/post.php?NombreR=' + "<?php echo $usuario; ?>" + '&Identificador=' + numero, true);
                 xmlhttp.send();
                 location.reload();
-
-
-
             }
         </script>
-        <!-- <br>
-        <div id="logout">
-            <label>Introduzca ID</label><br>
-            <input type="text" id="fname" name="fname"><br><br>
-            <button onclick="openOnImageClick()" type="button"> Borrar</button>
-
-        </div> -->
-
 </body>
 
 </html>

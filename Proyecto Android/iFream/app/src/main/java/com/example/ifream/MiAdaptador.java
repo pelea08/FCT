@@ -93,8 +93,6 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
         holder.botonSeguir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//Parametro 1=nombre Seguido
-//Parametro 2=nombre Seguidor
                 Toast.makeText(holder.context, "Seguir", Toast.LENGTH_SHORT).show();
                 InicioSesion a = new InicioSesion();
                 Inicio b = new Inicio();
@@ -102,7 +100,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                 String autorPublicacion = b.almacenGeneral.get(position).getautor();
                 posicionSelecionada = b.almacenGeneral.get(position).getIdentificador();
                 Toast.makeText(holder.context, "Esta es la pos que pulse: " + autorPublicacion, Toast.LENGTH_SHORT).show();
-                if(!autorPublicacion.equals(usuarioActual) ){
+                if (!autorPublicacion.equals(usuarioActual)) {
                     AsyncTask<String, Void, String> des = new Seguir.seguirr(holder.context).execute(autorPublicacion, usuarioActual);
                     try {
                         String aa = des.get();
@@ -118,7 +116,7 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }else{
+                } else {
                     Toast.makeText(holder.context, "No te puedes seguir a ti mismo", Toast.LENGTH_SHORT).show();
                 }
 
@@ -147,8 +145,8 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                     if (!almacenIdRepeticion.contains(idPublicacion)) {
                         almacenIdRepeticion.add(idPublicacion);
                         almacenUsuId.put(nombreActual, idPublicacion);
-                        int res=Integer.parseInt(likesActuales)  + 1;
-                        holder.likes.setText(res+"");
+                        int res = Integer.parseInt(likesActuales) + 1;
+                        holder.likes.setText(res + "");
 
                         AsyncTask<String, Void, String> prueba = new Like.darLike(holder.context).execute(idPublicacion);
                         try {
@@ -170,8 +168,8 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.Elemento> impl
                 } else {
                     if (almacenUsuId.containsKey(nombreActual) && !almacenUsuId.containsValue(idPublicacion)) {
                         almacenUsuId.put(nombreActual, idPublicacion);
-                        int res=Integer.parseInt(likesActuales)  + 1;
-                        holder.likes.setText(res+"");
+                        int res = Integer.parseInt(likesActuales) + 1;
+                        holder.likes.setText(res + "");
                         AsyncTask<String, Void, String> prueba = new Like.darLike(holder.context).execute(idPublicacion);
                         try {
                             String aa = prueba.get();

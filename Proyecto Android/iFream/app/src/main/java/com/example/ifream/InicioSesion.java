@@ -34,7 +34,6 @@ import java.util.concurrent.ExecutionException;
 public class InicioSesion extends AppCompatActivity {
     Button btnInicio;
     EditText usuario, contraseña;
-    static String auxResultado;
     boolean entrar;
     final String TAG = "MyActivity";
     public static String nombreS;
@@ -45,7 +44,7 @@ public class InicioSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
-         final CargandoDialog cargandoDialog = new CargandoDialog(InicioSesion.this);
+        final CargandoDialog cargandoDialog = new CargandoDialog(InicioSesion.this);
 
         btnInicio = findViewById(R.id.btnInicioSesion1);
         usuario = findViewById(R.id.editTextNo);
@@ -54,7 +53,6 @@ public class InicioSesion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cargandoDialog.empezarCarga();
-
                 //Ocultar teclado si no en determinadas dimensiones no se va a ver bien
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(contraseña.getWindowToken(), 0);
@@ -64,9 +62,6 @@ public class InicioSesion extends AppCompatActivity {
                 AsyncTask<String, Void, String> des = new Logeo(getApplicationContext()).execute(nombreS, contraseñaC);
                 try {
                     String aa = des.get();
-//
-//                    Thread.sleep(3 * 1000);
-//                    cargandoDialog.empezarCarga();
                     //CODIGO QUE DEVUELVE CUANDO EL LOGEO ES EXITOSO
                     if (aa.trim().equals("asdasdasdasdas")) {
                         entrar = true;
@@ -76,8 +71,6 @@ public class InicioSesion extends AppCompatActivity {
                     if (entrar) {
                         Intent intent = new Intent(InicioSesion.this, Inicio.class);
                         startActivity(intent);
-//                        cargandoDialog.destruitDialog();
-
                         //Cada vez que un usuario inicia sesion puede ir dar like a quin quiere
                         //pero cada id sobre el like se registra para evitar repeticion
                         almacenIdRepeticion = new ArrayList<>();
